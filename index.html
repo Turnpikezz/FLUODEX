@@ -680,7 +680,7 @@
 }
 
 
-		/* Custom 90s Beveled Scrollbars */
+		
 ::-webkit-scrollbar {
   width: 14px;
   height: 14px;
@@ -718,7 +718,7 @@
                 overflow-y: auto;
             }
 
-            /* 1. Top compact header + horizontal version strip */
+            
             .left-rail {
                 width: 100%;
                 height: auto;
@@ -751,7 +751,7 @@
                 flex-shrink: 0;
             }
 
-            /* 2. Full-width center binder with horizontal-scrolling folder tabs */
+            
             .center-area {
                 height: auto;
                 padding: 8px 6px 0;
@@ -795,7 +795,7 @@
                 padding: 5px;
             }
 
-            /* 3. Full-width filters below grid */
+            
             .right-rail {
                 width: 100%;
                 height: auto;
@@ -805,7 +805,7 @@
                 overflow-y: visible;
             }
 
-            /* 4. Stacked single-column card modal */
+            
             .modal-backdrop {
                 padding: 10px;
                 align-items: flex-start;
@@ -831,7 +831,7 @@
                 font-size: 0.95rem;
             }
         }
-        /* Shave off black TTS sheet corners across grid, modal, and zoom overlay */
+        
         .card-thumb img,
         #modalArtBox img,
         #zoomImg {
@@ -875,8 +875,8 @@
             color: #ffd84d;
            text-shadow: 2px 2px 0 #000;
         }
-        /* Rainbow prism text & star for LEGENDARY MONSTERS */
-               /* Static diagonal prism rainbow for LEGENDARY MONSTERS & star */
+        
+               
         .tab-rainbow-active,
         .sub-tab-chip.rainbow-active,
         .sub-tab-chip.active.rainbow-active {
@@ -1220,7 +1220,7 @@
                 return COUNTRY_CODES[key] || key.replace(/[^a-z0-9-]/g, "");
             }
 
-            // Inject unified styles for editor bar, flags, and corner/zoom rotate buttons
+            
             const style = document.createElement("style");
             style.textContent = [
                 "#editorBar { display: none; align-items: center; gap: 8px; padding: 6px 14px; background: #101a0e; border-bottom: 2px solid var(--border-lo); font-size: 0.78rem; }",
@@ -1279,7 +1279,7 @@
                 return img;
             }
 
-            // Build top editor toolbar
+            
             const folderBody = document.querySelector(".folder-body");
             const editorBar = document.createElement("div");
             editorBar.id = "editorBar";
@@ -1295,7 +1295,7 @@
             editorBar.append(badge, btnExportJson, btnExportCsv, btnClearDraft);
             folderBody.insertBefore(editorBar, folderBody.firstChild);
 
-            // Build modal titlebar flag wrapper & edit controls
+            
             const titlebar = document.querySelector(".win95-titlebar");
             const titleEl = document.getElementById("modalTitle");
             const titleWrap = document.createElement("div");
@@ -1319,7 +1319,7 @@
             modalEdControls.append(btnToggle, btnSave, btnCancel, closeBtn);
             titlebar.appendChild(modalEdControls);
 
-            // Build corner & zoom rotate buttons
+            
             const artBox = document.getElementById("modalArtBox");
             const zoomOverlay = document.getElementById("zoomOverlay");
             const zoomImg = document.getElementById("zoomImg");
@@ -1344,7 +1344,7 @@
                 btnCancel.style.display = (editMode && isEditingModal) ? "inline-block" : "none";
             }
 
-            // Rotation logic (modal + zoom lightbox)
+            
             let zoomScale = 1, zoomPanX = 0, zoomPanY = 0, isZoomDragging = false, zoomStartX = 0, zoomStartY = 0;
 
             function applyModalRotation() {
@@ -1416,7 +1416,7 @@
                 if (e.target === zoomOverlay) zoomOverlay.classList.remove("open");
             });
 
-            // Global keyboard shortcuts (Ctrl+E Edit Mode, R Rotate, ESC Close)
+            
             window.addEventListener("keydown", function (e) {
                 if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "e") {
                     e.preventDefault();
@@ -1448,7 +1448,7 @@
                 }
             });
 
-            // Flags & Modal Table helpers
+            
             function loadFlagImg(code, titleText, extraClass) {
                 const img = document.createElement("img");
                 img.className = extraClass || "modal-flag";
@@ -1618,7 +1618,7 @@
                 document.getElementById("modalBackdrop").classList.add("open");
             }
 
-            // Edit Mode form & export handlers
+            
             function addFieldRow(tbody, label, id, val, opts) {
                 opts = opts || {};
                 const tr = document.createElement("tr");
@@ -1798,7 +1798,7 @@ else delete currentModalCard.discontinued_in;
                 URL.revokeObjectURL(url);
             }
 
-            // Left-rail versions, folder tabs, dropdowns, and sliders
+            
            function buildVersionButtons(versions) {
     const versionList = document.getElementById("versionList");
     if (!versionList) return;
@@ -1853,7 +1853,7 @@ else delete currentModalCard.discontinued_in;
                 fillSelect("seriesSelect", allVersions.map(function (v) { return v.original_series; }));
                 fillSelect("nationalitySelect", allVersions.flatMap(function (v) { return v.nationalities || []; }));
 
-                // MBH slider bounds
+                
                 const mbhVals = allVersions.map(function (v) { return v.mbh; }).filter(function (n) { return typeof n === "number" && !isNaN(n); });
                 const minMbh = mbhVals.length ? Math.min(...mbhVals) : 0;
                 const maxMbh = mbhVals.length ? Math.max(...mbhVals) : 4;
@@ -1868,7 +1868,7 @@ else delete currentModalCard.discontinued_in;
                 state.mbhMax = maxMbh;
                 document.getElementById("mbhReadout").textContent = "Any";
 
-                // Discrete stepped BASE ATTACK slider
+                
                 const atkVals = allVersions.map(function (v) { return v.base_attack ?? v.base_atk; }).filter(function (n) { return typeof n === "number" && !isNaN(n); });
                 ATK_STEPS = atkVals.length ? [...new Set(atkVals)].sort(function (a, b) { return a - b; }) : [0, 50];
                 const maxAtkIdx = ATK_STEPS.length - 1;
@@ -1884,7 +1884,7 @@ else delete currentModalCard.discontinued_in;
                 state.atkMax = maxAtkIdx;
                 document.getElementById("atkReadout").textContent = "Any";
 
-                // Discrete 3-notch STAGE LENGTH slider (4, 8, ∞)
+                
                 document.getElementById("stageMin").min = 0;
                 document.getElementById("stageMin").max = 2;
                 document.getElementById("stageMax").min = 0;
@@ -1895,7 +1895,7 @@ else delete currentModalCard.discontinued_in;
                 state.stageMax = 2;
                 document.getElementById("stageReadout").textContent = "Any";
 
-                // Left-rail VER. SELECT buttons
+                
                 const presentVers = [...new Set(allVersions.map(function (v) { return v.version; }).filter(Boolean))].reverse();
                 buildVersionButtons(presentVers.length ? ["ALL", ...presentVers] : DEFAULT_VERSIONS);
             }
@@ -2159,7 +2159,7 @@ function render() {
                     return true;
                 });
 
-                // Anchor numbered sets (e.g., JOH1..JOH6) to their "1" card's name
+                
                 const setAnchorName = {};
                 list.forEach(function (item) {
                     const m = (item.card.id || "").match(/^(.+?)(\d+)$/);
@@ -2234,7 +2234,7 @@ else {
                 });
             }
 
-            // Initialize UI and load cards.json once
+            
             buildVersionButtons(DEFAULT_VERSIONS);
             syncEditorVisibility();
 
