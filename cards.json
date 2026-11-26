@@ -208,7 +208,15 @@
           "base_attack": null,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.1/JOHAN2.png"
+          "image": "cards/2.1/JOHAN2.png",
+          "nationalities": [
+            "AMERICAN",
+            "FRENCH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -4021,7 +4029,7 @@
         {
           "version": "1.0 BETA",
           "name": "Polish Homeless Guy",
-          "type": "MONSTER",
+          "type": "MONSTER, DISCONTINUED",
           "archetypes": [
             "Goon"
           ],
@@ -4032,9 +4040,15 @@
           "base_attack": 2.5,
           "stage_length": null,
           "notes": "Up to no good, EVOLUTION",
-          "image": "cards/1.0 BETA/deck1_57.png"
+          "image": "cards/1.0 BETA/deck1_57.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
-      ]
+      ],
+      "discontinued_in": "2.0"
     },
     {
       "id": "polho2",
@@ -4045,7 +4059,7 @@
         {
           "version": "1.0 BETA",
           "name": "Polish Silver Guy",
-          "type": "MONSTER",
+          "type": "MONSTER, DISCONTINUED",
           "archetypes": [
             "Goon"
           ],
@@ -4056,12 +4070,17 @@
           "base_attack": 3.5,
           "stage_length": null,
           "notes": "EVOLUTION",
-          "image": "cards/1.0 BETA/deck1_58.png"
+          "image": "cards/1.0 BETA/deck1_58.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "1.8.1",
           "name": "Polish Silver Guy",
-          "type": "MONSTER",
+          "type": "MONSTER, DISCONTINUED",
           "archetypes": [
             "Goon"
           ],
@@ -4072,9 +4091,15 @@
           "base_attack": 3.5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP2_28.png"
+          "image": "cards/1.8.1/MonsterP2_28.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
-      ]
+      ],
+      "discontinued_in": "2.0"
     },
     {
       "id": "poolclo",
