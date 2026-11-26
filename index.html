@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLUODEX</title>
+    <style>
+        :root {
+            --bg-desk: #081709;
+            --panel-face: #172b1b;
+            --panel-dark: #061709;
+            --panel-light: #376741;
+            --border-hi: #4d7554;
+            --border-lo: #000500;
+            --folder-inactive: #102012;
+            --folder-active: #172b1b;
+            --text-main: #faf4d6;
+            --text-dim: #a3b49f;
+            --gold: #ffe360;
+            --gold-glow: #ffe360;
+            --font-display: "Times New Roman", Times, Georgia, serif;
+            --font-ui: Tahoma, "MS Sans Serif", Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-ui);
+            background-color: var(--bg-desk);
+            background-image:
+                linear-gradient(45deg, rgba(0, 0, 0, 0.22) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(0, 0, 0, 0.22) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.22) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.22) 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+
+        .bevel-out {
+            background: var(--panel-face);
+            border-top: 2px solid var(--border-hi);
+            border-left: 2px solid var(--border-hi);
+            border-right: 2px solid var(--border-lo);
+            border-bottom: 2px solid var(--border-lo);
+        }
+
+        .zoom-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .zoom-overlay.open {
+            display: flex;
+        }
+
+        .zoom-overlay img {
+            height: 85vh;
+            width: auto;
+            max-width: none;
+            max-height: none;
+            image-rendering: pixelated;
+            border: 2px solid var(--border-hi);
+            box-shadow: 0 0 30px #000;
+            cursor: grab;
+            transform-origin: center center;
+        }
+
+        .zoom-overlay img:active {
+            cursor: grabbing;
+        }
+
+        .zoom-hint {
+            position: fixed;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--panel-dark);
+            border: 1px solid var(--border-hi);
+            color: var(--gold);
+            font-size: 0.8rem;
+            padding: 5px 12px;
+            pointer-events: none;
+        }
+
+        .bevel-in {
+            background: var(--panel-dark);
+            border-top: 2px solid var(--border-lo);
+            border-left: 2px solid var(--border-lo);
+            border-right: 2px solid var(--border-hi);
+            border-bottom: 2px solid var(--border-hi);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+            height: 20px;
+            margin: 0;
+        }
+
+        input[type="range"]:focus {
+            outline: 1px dotted var(--gold);
+        }
+
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #0d130c;
+            border: 2px inset #4a522d;
+            border-radius: 0;
+        }
+
+
+        input[type="range"]::-moz-range-track {
+            height: 8px;
+            background: #0d130c;
+            border: 2px inset #4a522d;
+            border-radius: 0;
+        }
+
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 18px;
+            background: #ca8a04;
+            border: 2px outset #eab308;
+            border-radius: 0;
+            margin-top: -7px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #eab308;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:active {
+            border-style: inset;
+        }
+
+
+        input[type="range"]::-moz-range-thumb {
+            width: 12px;
+            height: 18px;
+            background: #ca8a04;
+            border: 2px outset #eab308;
+            border-radius: 0;
+            box-sizing: border-box;
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+            background: #eab308;
+        }
+
+        input[type="range"]::-moz-range-thumb:active {
+            border-style: inset;
+        }
+
+        select.sort-select,
+        select.filter-dropdown {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0;
+            cursor: pointer;
+            padding-right: 28px;
+            background-color: var(--panel-dark);
+            background-image:
+                url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'><rect x='0' y='0' width='22' height='22' fill='%23172b1b'/><line x1='0' y1='0' x2='0' y2='22' stroke='%234a522d' stroke-width='2'/><line x1='2' y1='1' x2='21' y2='1' stroke='%234d7554' stroke-width='2'/><line x1='21' y1='0' x2='21' y2='22' stroke='%23000500' stroke-width='2'/><line x1='0' y1='21' x2='22' y2='21' stroke='%23000500' stroke-width='2'/><polygon points='7,9 15,9 11,14' fill='%23facc15'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 0 center;
+            background-size: 22px 100%;
+        }
+
+        select.sort-select:focus,
+        select.filter-dropdown:focus {
+            outline: 1px dotted var(--gold);
+        }
+
+        select.sort-select option,
+        select.filter-dropdown option {
+            background: var(--panel-dark);
+            color: var(--text-main);
+        }
+
+
+        .left-rail {
+            width: 148px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            z-index: 2;
+        }
+
+        .logo-area {
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--panel-dark);
+            border-bottom: 2px solid var(--border-lo);
+        }
+
+        .site-logo {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+			object-fit: fill;
+            display: block;
+            image-rendering: pixelated;
+        }
+
+        .ver-header {
+            padding: 8px 6px;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            background: var(--panel-face);
+            border-top: 2px solid var(--border-hi);
+            border-bottom: 2px solid var(--border-lo);
+            text-shadow: 4px 4px 0 #000;
+        }
+
+
+        .version-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .ver-btn {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-main);
+            padding: 10px 6px;
+            cursor: pointer;
+            text-align: center;
+            text-shadow: 2px 2px 0 #000;
+            background: var(--panel-face);
+            border-top: 2px solid var(--border-hi);
+            border-left: 2px solid var(--border-hi);
+            border-right: 2px solid var(--border-lo);
+            border-bottom: 2px solid var(--border-lo);
+        }
+
+        .ver-btn:hover {
+            background: var(--panel-light);
+            color: var(--gold);
+        }
+
+        .ver-btn.active {
+            background: var(--panel-dark);
+            color: var(--gold-glow);
+            border-top: 2px solid var(--border-lo);
+            border-left: 2px solid var(--border-lo);
+            border-right: 2px solid var(--border-hi);
+            border-bottom: 2px solid var(--border-hi);
+        }
+
+
+        .center-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            min-width: 0;
+            padding: 8px 10px 0;
+        }
+
+        .count-row {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+            padding-left: 4px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .count-row strong {
+            color: var(--gold);
+        }
+
+        .folder-tabs-row {
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding-left: 4px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .folder-tab-wrap {
+            filter: drop-shadow(0 -1px 0 var(--border-hi)) drop-shadow(1px 0 0 var(--border-lo));
+        }
+
+        .folder-tab {
+            font-family: var(--font-ui);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--text-dim);
+            background: var(--folder-inactive);
+            border: none;
+            padding: 8px 20px 7px;
+            cursor: pointer;
+            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 100%, 0% 100%);
+            text-shadow: 2px 2px 0 #000;
+            transition: background 0.1s, color 0.1s;
+        }
+
+        .folder-tab:hover {
+            background: var(--panel-light);
+            color: var(--text-main);
+        }
+
+        .folder-tab.active {
+            background: var(--folder-active);
+            color: var(--gold);
+            padding-top: 10px;
+            padding-bottom: 9px;
+            margin-bottom: -2px;
+        }
+
+
+        .folder-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--folder-active);
+            border-top: 2px solid var(--border-hi);
+            border-left: 2px solid var(--border-hi);
+            border-right: 2px solid var(--border-lo);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-sort-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 10px 14px;
+            border-bottom: 2px groove var(--border-hi);
+        }
+
+        .search-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .search-input {
+            flex: 1;
+            max-width: 340px;
+            padding: 5px 8px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+        }
+
+        .search-input:focus {
+            outline: 1px dotted var(--gold);
+        }
+
+        .sort-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .sort-select {
+            padding: 5px 8px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+        }
+
+        .grid-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            background: #041507;
+            box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.65);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+            gap: 14px;
+        }
+
+        .card-tile {
+            aspect-ratio: 5 / 7;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--panel-face);
+            border-top: 2px solid var(--border-hi);
+            border-left: 2px solid var(--border-hi);
+            border-right: 2px solid var(--border-lo);
+            border-bottom: 2px solid var(--border-lo);
+        }
+
+        .card-tile:hover {
+            outline: 2px dashed var(--gold);
+            outline-offset: -4px;
+        }
+
+        .card-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .right-rail {
+            width: 265px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            z-index: 2;
+        }
+
+        .filters-header {
+            padding: 12px 14px;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-align: center;
+            background: var(--panel-dark);
+            border-bottom: 2px solid var(--border-lo);
+            text-shadow: 4px 4px 0 #000;
+        }
+
+        .filters-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px 12px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .filter-box {
+            padding: 10px;
+        }
+
+        .filter-title {
+            font-family: var(--font-display);
+            font-size: 0.98rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 4px;
+            color: var(--gold);
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .range-readout {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--gold-glow);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 4px;
+        }
+
+        .slider-row input[type="range"] {
+            flex: 1;
+        }
+
+        .filter-dropdown {
+            width: 100%;
+            padding: 5px 6px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+        }
+
+        .retro-btn {
+            width: 100%;
+            padding: 8px;
+            font-family: var(--font-ui);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            color: var(--text-main);
+            cursor: pointer;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .retro-btn:active {
+            border-top: 2px solid var(--border-lo);
+            border-left: 2px solid var(--border-lo);
+            border-right: 2px solid var(--border-hi);
+            border-bottom: 2px solid var(--border-hi);
+        }
+
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-window {
+            max-width: 1020px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .win95-titlebar {
+            background: linear-gradient(90deg, #172b1b, #061709);
+            padding: 6px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-lo);
+        }
+
+        .win95-titlebar strong {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.03em;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .win95-close {
+            width: 24px;
+            height: 22px;
+            font-weight: 900;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .wiki-tabbar {
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--panel-dark);
+            padding: 6px 8px 0;
+            gap: 3px;
+            border-bottom: 1px solid var(--border-hi);
+        }
+
+        .wiki-tab {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            cursor: pointer;
+            color: var(--text-dim);
+            background: var(--folder-inactive);
+			text-shadow: 3px 3px 0 #000;
+            border: none;
+            clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 100%, 0% 100%);
+        }
+
+.wiki-tab.active {
+  background: var(--panel-face);
+  color: var(--gold);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 2px 0 var(--border-hi);
+}
+
+
+ .modal-content {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  align-items: stretch;
+  gap: 18px;
+  padding: 18px;
+}
+
+#modalTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+#modalTable td {
+  padding: 9px 12px;
+  border: 1px solid var(--border-lo);
+  background: var(--panel-dark);
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 1.05rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+#modalTable td:first-child {
+  color: var(--gold);
+  width: 38%;
+  font-weight: 700;
+  background: #0f1d11;
+}
+
+#modalTable tr.desc-row {
+  height: 100%;
+}
+
+#modalTable tr.desc-row td {
+  vertical-align: top;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.info-desc-box {
+  height: 100%;
+  min-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+
+		/* Custom 90s Beveled Scrollbars */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000d00;
+  border-left: 1px solid #2a3c24;
+  box-shadow: inset 1px 1px 0 #050904;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18301c;
+  border-top: 2px solid #4a724b;
+  border-left: 2px solid #4a724b;
+  border-right: 2px solid #000e01;
+  border-bottom: 2px solid #000e01;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334d2c;
+  border-top-color: #d4af37;
+  border-left-color: #d4af37;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000d00;
+}
+        @media (max-width: 820px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            /* 1. Top compact header + horizontal version strip */
+            .left-rail {
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                border-bottom: 2px solid var(--border-lo);
+            }
+            .logo-area {
+                width: 120px;
+                height: 54px;
+                border-bottom: none;
+                border-right: 2px solid var(--border-lo);
+            }
+            .ver-header {
+                display: none;
+            }
+            .version-list {
+                flex: 1;
+                flex-direction: row;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: 6px;
+                gap: 6px;
+            }
+            .ver-btn {
+                font-size: 1rem;
+                padding: 6px 12px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            /* 2. Full-width center binder with horizontal-scrolling folder tabs */
+            .center-area {
+                height: auto;
+                padding: 8px 6px 0;
+            }
+            .folder-tabs-row {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 2px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .folder-tab-wrap {
+                flex-shrink: 0;
+            }
+            .folder-tab {
+                padding: 7px 14px 6px;
+                font-size: 0.74rem;
+            }
+            .folder-body {
+                overflow: visible;
+            }
+            .search-sort-bar {
+                padding: 8px 10px;
+                gap: 8px;
+            }
+            .search-group, .sort-group {
+                width: 100%;
+                min-width: 0;
+            }
+            .search-input {
+                max-width: none;
+            }
+            .grid-scroll {
+                overflow-y: visible;
+                padding: 10px;
+            }
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+                gap: 8px;
+            }
+            .card-tile {
+                padding: 5px;
+            }
+
+            /* 3. Full-width filters below grid */
+            .right-rail {
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+            }
+            .filters-scroll {
+                overflow-y: visible;
+            }
+
+            /* 4. Stacked single-column card modal */
+            .modal-backdrop {
+                padding: 10px;
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+            .modal-window {
+                margin: auto 0;
+                max-height: 92vh;
+                overflow-y: auto;
+            }
+            .modal-content {
+                grid-template-columns: 1fr;
+                padding: 12px;
+                gap: 12px;
+            }
+            #modalArtBox {
+                max-width: 240px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            #modalTable td {
+                padding: 7px 9px;
+                font-size: 0.95rem;
+            }
+        }
+        /* Shave off black TTS sheet corners across grid, modal, and zoom overlay */
+        .card-thumb img,
+        #modalArtBox img,
+        #zoomImg {
+            border-radius: 6.5% / 4.8%;
+            overflow: hidden;
+        }
+               #modalArtBox {
+            align-self: start;
+        }
+        #modalTable {
+            display: block;
+            max-height: 588px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        #modalTable tbody {
+            display: table;
+            width: 100%;
+        }
+                 .sub-tab-chip {
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            margin: -4px 0 -4px 6px;
+            padding: 0 2px;
+            font-size: 16px;
+            line-height: 0.8;
+            color: #a3b49f;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-shadow: 2px 2px 0 #000;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        .sub-tab-chip:hover {
+            color: #b8aa68;
+            transform: scale(1.12);
+        }
+        .sub-tab-chip.active {
+            color: #ffd84d;
+           text-shadow: 2px 2px 0 #000;
+        }
+        /* Rainbow prism text & star for LEGENDARY MONSTERS */
+               /* Static diagonal prism rainbow for LEGENDARY MONSTERS & star */
+        .tab-rainbow-active,
+        .sub-tab-chip.rainbow-active,
+        .sub-tab-chip.active.rainbow-active {
+            background: linear-gradient(
+                115deg,
+                #ff4757 0%,
+                #ffa502 22%,
+                #ffeb3b 42%,
+                #2ed573 62%,
+                #1e90ff 82%,
+                #b84dff 100%
+            ) !important;
+            background-size: 100% 100% !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+            text-shadow: none !important;
+            filter: drop-shadow(2px 2px 0 #000);
+        }
+      
+
+    </style>
+</head>
+
+<body>
+
+
+    <aside class="left-rail bevel-out">
+        <div class="logo-area">
+            <img src="logo.png" alt="FLUODEX" class="site-logo" />
+        </div>
+        <div class="ver-header">VER. SELECT</div>
+        <div class="version-list" id="versionList"></div>
+    </aside>
+
+
+    <section class="center-area">
+        <div class="count-row">Showing <strong id="visCount">0</strong> of <strong id="totCount">0</strong> cards</div>
+
+
+        <nav class="folder-tabs-row" id="typeTabs">
+            <div class="folder-tab-wrap"><button class="folder-tab active" data-type="ALL">ALL</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="MONSTER">MONSTERS</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="VIP">VIPS</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="STAGE">STAGES</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="GAMBLING BLUE">GAMBLING BLUE</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="GAMBLING RED">GAMBLING RED</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="HAVOC">HAVOC</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="EXTRA">EXTRA</button></div>
+			<div class="folder-tab-wrap"><button class="folder-tab" data-type="DISCONTINUED">DISCONTINUED</button></div>
+        </nav>
+
+
+        <div class="folder-body">
+            <div class="search-sort-bar">
+                <div class="search-group">
+                    <label for="searchInput">SEARCH:</label>
+                    <input type="text" id="searchInput" class="search-input bevel-in" placeholder="Type card name..." />
+                </div>
+                <div class="sort-group">
+                    <span>SORT BY:</span>
+                    <select id="sortSelect" class="sort-select bevel-in">
+                        <option value="name_asc">NAME</option>
+                        <option value="mbh_desc">MBH (HIGH → LOW)</option>
+                        <option value="atk_desc">BASE ATTACK (HIGH → LOW)</option>
+                        <option value="stage_desc">STAGE LENGTH (LONG → SHORT)</option>
+                        <option value="debut_asc">DEBUT VERSION</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid-scroll">
+                <div class="card-grid" id="cardGrid"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <aside class="right-rail bevel-out">
+        <div class="filters-header">FILTERS</div>
+        <div class="filters-scroll">
+
+
+            <div class="filter-box bevel-in" id="mbhBlock">
+                <div class="filter-title">MBH</div>
+                <div class="range-readout" id="mbhReadout">Any</div>
+                <div class="slider-row"><span>Min</span><input type="range" id="mbhMin" min="0" max="4" value="0" /></div>
+                <div class="slider-row"><span>Max</span><input type="range" id="mbhMax" min="0" max="4" value="4" /></div>
+            </div>
+
+            <div class="filter-box bevel-in" id="atkBlock">
+                <div class="filter-title">BASE ATTACK</div>
+                <div class="range-readout" id="atkReadout">Any</div>
+                <div class="slider-row"><span>Min</span><input type="range" id="atkMin" min="0" max="50" value="0" /></div>
+                <div class="slider-row"><span>Max</span><input type="range" id="atkMax" min="0" max="50" value="50" /></div>
+            </div>
+
+            <div class="filter-box bevel-in" id="stageLengthBlock" style="display: none;">
+                <div class="filter-title">STAGE LENGTH</div>
+                <div class="range-readout" id="stageReadout">Any</div>
+                <div class="slider-row"><span>Min</span><input type="range" id="stageMin" min="0" max="2" value="0" /></div>
+                <div class="slider-row"><span>Max</span><input type="range" id="stageMax" min="0" max="2" value="2" /></div>
+            </div>
+
+
+
+            <div class="filter-box bevel-in">
+                <div class="filter-title">DEBUT</div>
+                <select id="debutSelect" class="filter-dropdown bevel-in">
+                    <option value="ALL">All Versions</option>
+                </select>
+            </div>
+
+            <div class="filter-box bevel-in">
+                <div class="filter-title">ARCHETYPE</div>
+                <select id="archetypeSelect" class="filter-dropdown bevel-in">
+                    <option value="ALL">All Archetypes</option>
+                </select>
+            </div>
+
+            <div class="filter-box bevel-in">
+                <div class="filter-title">CREATOR</div>
+                <select id="creatorSelect" class="filter-dropdown bevel-in">
+                    <option value="ALL">All Creators</option>
+                </select>
+            </div>
+
+            <div class="filter-box bevel-in">
+                <div class="filter-title">SOURCE MATERIAL</div>
+                <select id="seriesSelect" class="filter-dropdown bevel-in">
+                    <option value="ALL">All Series</option>
+                </select>
+            </div>
+
+            <button class="retro-btn bevel-out" id="resetBtn">RESET FILTERS</button>
+        </div>
+    </aside>
+
+
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal-window bevel-out">
+            <div class="win95-titlebar">
+                <strong id="modalTitle">Card Name</strong>
+                <button class="win95-close bevel-out" id="modalClose">X</button>
+            </div>
+            <div class="wiki-tabbar" id="wikiTabbar"></div>
+            <div class="modal-content">
+                <div id="modalArtBox" class="bevel-in" style="aspect-ratio:5/7; display:flex; align-items:center; justify-content:center; padding:12px; text-align:center; font-family:var(--font-display); font-size:1.15rem; font-weight:700; overflow:hidden;"></div>
+                <table class="info-table" id="modalTable"></table>
+            </div>
+        </div>
+    </div>
+
+       <div class="zoom-overlay" id="zoomOverlay">
+        <img id="zoomImg" src="" alt="Full Size Card" draggable="false" />
+        <div class="zoom-hint">Scroll to zoom · Drag to pan · Click background or ESC to close</div>
+    </div>
+
+    <script>
+        (function () {
+            let CARDS = [];
+            const DEFAULT_VERSIONS = ["ALL", "2.3", "2.2", "2.1", "2.0", "1.8", "1.4", "1.3", "BETA/1.0"];
+            const STAGE_STEPS = [4, 8, 999];
+            let ATK_STEPS = [0, 50];
+
+            const STORAGE_KEY = "fluodex_editor_draft_v1";
+            let editMode = new URLSearchParams(window.location.search).get("edit") === "1";
+            let isEditingModal = false;
+            let currentModalCard = null;
+            let currentModalVer = null;
+            let modalRotation = 0;
+
+            const state = {
+                version: "ALL",
+                type: "ALL",
+                search: "",
+                sort: "name_asc",
+                mbhMin: 0,
+                mbhMax: 4,
+                atkMin: 0,
+                atkMax: 1,
+                stageMin: 0,
+                stageMax: 2,
+                debut: "ALL",
+                archetype: "ALL",
+                creator: "ALL",
+                series: "ALL",
+                nationality: "ALL"
+            };
+			state.subFilter = null;
+
+(function initTabSubChips() {
+    const subConfigs = {
+        "MONSTER": {
+            baseLabel: "MONSTERS",
+            activeLabel: "LEGENDARY MONSTERS",
+            tooltip: "Toggle Legendary Monsters",
+            tag: "LEGENDARY",
+            labelClass: "tab-rainbow-active",
+            chipClass: "rainbow-active"
+        },
+        "VIP": {
+            baseLabel: "VIPS",
+            activeLabel: "SUPER VIPs",
+            tooltip: "Toggle Super VIPs",
+            tag: "SUPER",
+            labelClass: "tab-gold-active",
+            chipClass: "gold-active"
+        }
+    };
+
+    const resetters = new Array();
+
+    function clearSubFilter() {
+        state.subFilter = null;
+        resetters.forEach(function (fn) { fn(); });
+    }
+
+    document.querySelectorAll("[data-type]").forEach(function (tab) {
+        const key = String(tab.dataset.type || "").trim().toUpperCase().replace(/S$/, "");
+        const cfg = subConfigs[key];
+
+        tab.addEventListener("click", function () {
+            clearSubFilter();
+        });
+
+        if (!cfg) return;
+
+        const labelSpan = document.createElement("span");
+        labelSpan.textContent = cfg.baseLabel;
+
+        const chip = document.createElement("span");
+        chip.className = "sub-tab-chip";
+        chip.textContent = "\u2605";
+        chip.title = cfg.tooltip;
+
+        tab.textContent = "";
+        tab.appendChild(labelSpan);
+        tab.appendChild(chip);
+
+        resetters.push(function () {
+            labelSpan.textContent = cfg.baseLabel;
+            labelSpan.classList.remove("tab-rainbow-active", "tab-gold-active");
+            chip.classList.remove("active", "rainbow-active", "gold-active");
+        });
+
+        chip.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const turningOn = !(tab.classList.contains("active") && state.subFilter === cfg.tag);
+
+            if (!tab.classList.contains("active")) {
+                tab.click();
+            } else {
+                clearSubFilter();
+            }
+
+            if (turningOn) {
+                state.subFilter = cfg.tag;
+                labelSpan.textContent = cfg.activeLabel;
+                labelSpan.classList.add(cfg.labelClass);
+                chip.classList.add("active", cfg.chipClass);
+            }
+            render();
+        });
+    });
+})();
+
+
+
+
+            const COUNTRY_CODES = {
+                "american": "us", "usa": "us", "united states": "us", "us": "us",
+                "japanese": "jp", "japan": "jp", "jp": "jp",
+                "british": "gb", "uk": "gb", "united kingdom": "gb", "english": "gb", "england": "gb", "gb": "gb",
+                "scottish": "gb-sct", "scotland": "gb-sct",
+                "welsh": "gb-wls", "wales": "gb-wls",
+                "canadian": "ca", "canada": "ca", "ca": "ca",
+                "australian": "au", "australia": "au", "au": "au",
+                "new zealand": "nz", "nz": "nz",
+                "german": "de", "germany": "de", "de": "de",
+                "french": "fr", "france": "fr", "fr": "fr",
+                "italian": "it", "italy": "it", "it": "it",
+                "spanish": "es", "spain": "es", "es": "es",
+                "portuguese": "pt", "portugal": "pt", "pt": "pt",
+                "russian": "ru", "russia": "ru", "ru": "ru",
+                "soviet": "su", "ussr": "su", "su": "su",
+                "chinese": "cn", "china": "cn", "cn": "cn",
+                "taiwanese": "tw", "taiwan": "tw", "tw": "tw",
+                "hong kong": "hk", "hk": "hk",
+                "korean": "kr", "south korean": "kr", "south korea": "kr", "korea": "kr", "kr": "kr",
+                "north korean": "kp", "north korea": "kp", "kp": "kp",
+                "mexican": "mx", "mexico": "mx", "mx": "mx",
+                "brazilian": "br", "brazil": "br", "br": "br",
+                "argentine": "ar", "argentinian": "ar", "argentina": "ar", "ar": "ar",
+                "chilean": "cl", "chile": "cl", "cl": "cl",
+                "colombian": "co", "colombia": "co", "co": "co",
+                "peruvian": "pe", "peru": "pe", "pe": "pe",
+                "indian": "in", "india": "in", "in": "in",
+                "pakistani": "pk", "pakistan": "pk", "pk": "pk",
+                "filipino": "ph", "philippine": "ph", "philippines": "ph", "ph": "ph",
+                "vietnamese": "vn", "vietnam": "vn", "vn": "vn",
+                "thai": "th", "thailand": "th", "th": "th",
+                "indonesian": "id", "indonesia": "id", "id": "id",
+                "malaysian": "my", "malaysia": "my", "my": "my",
+                "singaporean": "sg", "singapore": "sg", "sg": "sg",
+                "irish": "ie", "ireland": "ie", "ie": "ie",
+                "dutch": "nl", "netherlands": "nl", "holland": "nl", "nl": "nl",
+                "belgian": "be", "belgium": "be", "be": "be",
+                "swiss": "ch", "switzerland": "ch", "ch": "ch",
+                "austrian": "at", "austria": "at", "at": "at",
+                "swedish": "se", "sweden": "se", "se": "se",
+                "norwegian": "no", "norway": "no", "no": "no",
+                "danish": "dk", "denmark": "dk", "dk": "dk",
+                "finnish": "fi", "finland": "fi", "fi": "fi",
+                "icelandic": "is", "iceland": "is", "is": "is",
+                "polish": "pl", "poland": "pl", "pl": "pl",
+                "ukrainian": "ua", "ukraine": "ua", "ua": "ua",
+                "czech": "cz", "czechia": "cz", "cz": "cz",
+                "hungarian": "hu", "hungary": "hu", "hu": "hu",
+                "romanian": "ro", "romania": "ro", "ro": "ro",
+                "greek": "gr", "greece": "gr", "gr": "gr",
+                "turkish": "tr", "turkey": "tr", "tr": "tr",
+                "israeli": "il", "israel": "il", "il": "il",
+                "saudi": "sa", "saudi arabian": "sa", "saudi arabia": "sa", "sa": "sa",
+                "iranian": "ir", "iran": "ir", "ir": "ir",
+                "iraqi": "iq", "iraq": "iq", "iq": "iq",
+                "egyptian": "eg", "egypt": "eg", "eg": "eg",
+                "south african": "za", "south africa": "za", "za": "za",
+                "nigerian": "ng", "nigeria": "ng", "ng": "ng",
+                "kenyan": "ke", "kenya": "ke", "ke": "ke",
+                "jamaican": "jm", "jamaica": "jm", "jm": "jm",
+                "cuban": "cu", "cuba": "cu", "cu": "cu",
+                "extra terrestrial": "vx", "vx": "vx",
+                "puerto rican": "pr", "puerto rico": "pr", "pr": "pr"
+            };
+
+            function toFlagCode(nat) {
+                const key = String(nat || "").trim().toLowerCase();
+                if (!key) return "";
+                return COUNTRY_CODES[key] || key.replace(/[^a-z0-9-]/g, "");
+            }
+
+            // Inject unified styles for editor bar, flags, and corner/zoom rotate buttons
+            const style = document.createElement("style");
+            style.textContent = [
+                "#editorBar { display: none; align-items: center; gap: 8px; padding: 6px 14px; background: #101a0e; border-bottom: 2px solid var(--border-lo); font-size: 0.78rem; }",
+                "#editorBar.visible { display: flex; flex-wrap: wrap; }",
+                "#editorBar span.badge { color: var(--gold); font-weight: 700; letter-spacing: 0.05em; margin-right: auto; }",
+                ".ed-btn { padding: 4px 10px; font-family: var(--font-ui); font-size: 0.76rem; font-weight: 700; color: var(--text-main); background: var(--panel-face); border-top: 2px solid var(--border-hi); border-left: 2px solid var(--border-hi); border-right: 2px solid var(--border-lo); border-bottom: 2px solid var(--border-lo); cursor: pointer; }",
+                ".ed-btn:hover { background: var(--panel-light); color: var(--gold); }",
+                ".ed-btn.gold { color: var(--gold); }",
+                ".ed-input, .ed-textarea { width: 100%; background: #0b120a; color: var(--text-main); border: 1px solid var(--border-hi); font-family: 'Times New Roman', Times, Georgia, serif; font-size: 1rem; padding: 4px 6px; }",
+                ".ed-textarea { min-height: 110px; resize: vertical; line-height: 1.4; }",
+                "#modalTitleWrap { display: flex; align-items: center; gap: 8px; min-width: 0; }",
+                "#modalFlags { display: inline-flex; align-items: center; gap: 5px; }",
+                ".modal-flag { height: 20px; width: auto; image-rendering: pixelated; border: 1px solid #000; box-shadow: 1px 1px 0 rgba(255,255,255,0.2); }",
+                ".modal-flag-split { position: relative; display: inline-block; width: 30px; height: 20px; border: 1px solid #000; box-shadow: 1px 1px 0 rgba(255,255,255,0.2); overflow: hidden; }",
+                ".modal-flag-split img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }",
+                ".modal-flag-split img.half-tl { clip-path: polygon(0 0, 100% 0, 0 100%); }",
+                ".modal-flag-split img.half-br { clip-path: polygon(100% 0, 100% 100%, 0 100%); }",
+                "#modalArtBox { position: relative; }",
+                ".corner-rotate-btn {",
+                "  position: absolute; bottom: 8px; right: 8px; z-index: 15;",
+                "  width: 30px; height: 30px; padding: 0;",
+                "  display: flex; align-items: center; justify-content: center;",
+                "  font-family: var(--font-ui); font-size: 1.05rem; font-weight: 700;",
+                "  color: var(--gold); background: var(--panel-face);",
+                "  border-top: 2px solid var(--border-hi); border-left: 2px solid var(--border-hi);",
+                "  border-right: 2px solid var(--border-lo); border-bottom: 2px solid var(--border-lo);",
+                "  cursor: pointer; box-shadow: 1px 1px 0 #000; text-shadow: 2px 2px 0 #000;",
+                "}",
+                ".corner-rotate-btn:hover { background: var(--panel-light); color: #fff; }",
+                "#zoomRotateBtn { position: fixed; bottom: 18px; right: 18px; width: auto; height: 32px; padding: 0 12px; font-size: 0.78rem; z-index: 10002; }"
+            ].join("\n");
+            document.head.appendChild(style);
+
+            function makeBtn(id, text, isGold) {
+                const b = document.createElement("button");
+                b.id = id;
+                b.textContent = text;
+                b.className = "ed-btn" + (isGold ? " gold" : "");
+                return b;
+            }
+
+            function makeSkullImg(sizePx) {
+                const img = document.createElement("img");
+                img.src = "icons/skull.svg";
+                img.alt = "Insta-Kill";
+                img.title = "Insta-Kill (999)";
+                img.style.cssText = "height:" + sizePx + "px; width:auto; display:inline-block; vertical-align:middle; filter:drop-shadow(2px 2px 0 #000);";
+                return img;
+            }
+
+            function makeDangerIcon() {
+                const img = document.createElement("img");
+                img.src = "icons/super.svg";
+                img.alt = "SUPER";
+                img.style.cssText = "height: 19px; width: auto; vertical-align: -3px; margin-left: 6px; filter: drop-shadow(2px 2px 0 #000);";
+                return img;
+            }
+
+            // Build top editor toolbar
+            const folderBody = document.querySelector(".folder-body");
+            const editorBar = document.createElement("div");
+            editorBar.id = "editorBar";
+
+            const badge = document.createElement("span");
+            badge.className = "badge";
+            badge.textContent = "EDIT MODE ACTIVE (Ctrl+E to hide)";
+
+            const btnExportJson = makeBtn("edExportJson", "EXPORT cards.json", true);
+            const btnExportCsv = makeBtn("edExportCsv", "EXPORT cards.csv", true);
+            const btnClearDraft = makeBtn("edClearDraft", "RELOAD ORIGINAL", false);
+
+            editorBar.append(badge, btnExportJson, btnExportCsv, btnClearDraft);
+            folderBody.insertBefore(editorBar, folderBody.firstChild);
+
+            // Build modal titlebar flag wrapper & edit controls
+            const titlebar = document.querySelector(".win95-titlebar");
+            const titleEl = document.getElementById("modalTitle");
+            const titleWrap = document.createElement("div");
+            titleWrap.id = "modalTitleWrap";
+            const flagBox = document.createElement("span");
+            flagBox.id = "modalFlags";
+            titlebar.insertBefore(titleWrap, titleEl);
+            titleWrap.append(titleEl, flagBox);
+
+            const closeBtn = document.getElementById("modalClose");
+            const modalEdControls = document.createElement("div");
+            modalEdControls.style.cssText = "display:flex; gap:6px; align-items:center;";
+
+            const btnToggle = makeBtn("edModalToggle", "EDIT CARD", true);
+            const btnSave = makeBtn("edModalSave", "SAVE", true);
+            const btnCancel = makeBtn("edModalCancel", "CANCEL", false);
+            btnToggle.style.display = "none";
+            btnSave.style.display = "none";
+            btnCancel.style.display = "none";
+
+            modalEdControls.append(btnToggle, btnSave, btnCancel, closeBtn);
+            titlebar.appendChild(modalEdControls);
+
+            // Build corner & zoom rotate buttons
+            const artBox = document.getElementById("modalArtBox");
+            const zoomOverlay = document.getElementById("zoomOverlay");
+            const zoomImg = document.getElementById("zoomImg");
+
+            const modalRotBtn = document.createElement("button");
+            modalRotBtn.id = "modalRotateBtn";
+            modalRotBtn.className = "corner-rotate-btn";
+            modalRotBtn.textContent = "\u21BB";
+            modalRotBtn.title = "Rotate card 90\u00B0 (R)";
+
+            const zoomRotBtn = document.createElement("button");
+            zoomRotBtn.id = "zoomRotateBtn";
+            zoomRotBtn.className = "corner-rotate-btn";
+            zoomRotBtn.textContent = "\u21BB ROTATE";
+            zoomRotBtn.title = "Rotate zoomed card 90\u00B0 (R)";
+            zoomOverlay.appendChild(zoomRotBtn);
+
+            function syncEditorVisibility() {
+                editorBar.classList.toggle("visible", editMode);
+                btnToggle.style.display = (editMode && !isEditingModal) ? "inline-block" : "none";
+                btnSave.style.display = (editMode && isEditingModal) ? "inline-block" : "none";
+                btnCancel.style.display = (editMode && isEditingModal) ? "inline-block" : "none";
+            }
+
+            // Rotation logic (modal + zoom lightbox)
+            let zoomScale = 1, zoomPanX = 0, zoomPanY = 0, isZoomDragging = false, zoomStartX = 0, zoomStartY = 0;
+
+            function applyModalRotation() {
+                const img = artBox.querySelector("img");
+                if (!img) return;
+                img.style.transition = "none";
+                if (modalRotation % 180 !== 0) {
+                    const ratio = (img.naturalWidth && img.naturalHeight) ? (img.naturalWidth / img.naturalHeight) : 0.71;
+                    img.style.transform = "rotate(" + modalRotation + "deg) scale(" + ratio.toFixed(3) + ")";
+                } else {
+                    img.style.transform = "rotate(" + modalRotation + "deg)";
+                }
+            }
+
+            function applyZoomTransform() {
+                const base = "translate(" + zoomPanX + "px, " + zoomPanY + "px) scale(" + zoomScale + ")";
+                zoomImg.style.transform = modalRotation ? (base + " rotate(" + modalRotation + "deg)") : base;
+            }
+
+            function stepRotation(e) {
+                if (e) e.stopPropagation();
+                modalRotation = (modalRotation + 90) % 360;
+                applyModalRotation();
+                if (zoomOverlay.classList.contains("open")) {
+                    applyZoomTransform();
+                }
+            }
+
+            modalRotBtn.addEventListener("click", stepRotation);
+            zoomRotBtn.addEventListener("click", stepRotation);
+
+            artBox.addEventListener("click", function () {
+                const img = this.querySelector("img");
+                if (!img || !img.src) return;
+                zoomImg.src = img.src;
+                zoomScale = 1;
+                zoomPanX = 0;
+                zoomPanY = 0;
+                applyZoomTransform();
+                zoomOverlay.classList.add("open");
+            });
+
+            zoomOverlay.addEventListener("wheel", function (e) {
+                e.preventDefault();
+                const delta = e.deltaY < 0 ? 0.25 : -0.25;
+                zoomScale = Math.min(Math.max(0.5, zoomScale + delta), 5);
+                applyZoomTransform();
+            }, { passive: false });
+
+            zoomImg.addEventListener("mousedown", function (e) {
+                e.preventDefault();
+                isZoomDragging = true;
+                zoomStartX = e.clientX - zoomPanX;
+                zoomStartY = e.clientY - zoomPanY;
+            });
+
+            window.addEventListener("mousemove", function (e) {
+                if (!isZoomDragging) return;
+                zoomPanX = e.clientX - zoomStartX;
+                zoomPanY = e.clientY - zoomStartY;
+                applyZoomTransform();
+            });
+
+            window.addEventListener("mouseup", function () {
+                isZoomDragging = false;
+            });
+
+            zoomOverlay.addEventListener("click", function (e) {
+                if (e.target === zoomOverlay) zoomOverlay.classList.remove("open");
+            });
+
+            // Global keyboard shortcuts (Ctrl+E Edit Mode, R Rotate, ESC Close)
+            window.addEventListener("keydown", function (e) {
+                if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "e") {
+                    e.preventDefault();
+                    editMode = !editMode;
+                    if (!editMode && isEditingModal) {
+                        isEditingModal = false;
+                        if (currentModalCard && currentModalVer) openModal(currentModalCard, currentModalVer);
+                    }
+                    syncEditorVisibility();
+                    return;
+                }
+
+                if (e.key === "Escape") {
+                    if (zoomOverlay.classList.contains("open")) {
+                        zoomOverlay.classList.remove("open");
+                    } else {
+                        document.getElementById("modalBackdrop").classList.remove("open");
+                    }
+                    return;
+                }
+
+                const backdrop = document.getElementById("modalBackdrop");
+                const isOpen = (backdrop && backdrop.classList.contains("open")) || zoomOverlay.classList.contains("open");
+                if (!isOpen) return;
+                if (["INPUT", "TEXTAREA", "SELECT"].indexOf(document.activeElement.tagName) !== -1) return;
+                if (e.key.toLowerCase() === "r" && !e.ctrlKey && !e.metaKey) {
+                    e.preventDefault();
+                    stepRotation();
+                }
+            });
+
+            // Flags & Modal Table helpers
+            function loadFlagImg(code, titleText, extraClass) {
+                const img = document.createElement("img");
+                img.className = extraClass || "modal-flag";
+                img.alt = titleText;
+                img.title = titleText;
+                img.src = "flags/" + encodeURIComponent(code) + ".png";
+                img.onerror = function () {
+                    const upper = code.toUpperCase();
+                    if (!img.dataset.triedUpper && upper !== code) {
+                        img.dataset.triedUpper = "1";
+                        img.src = "flags/" + encodeURIComponent(upper) + ".png";
+                    } else {
+                        img.style.display = "none";
+                        if (img.parentElement && img.parentElement.classList.contains("modal-flag-split")) {
+                            img.parentElement.style.display = "none";
+                        }
+                    }
+                };
+                return img;
+            }
+
+            function renderHeaderFlags(nats) {
+                flagBox.innerHTML = "";
+                const list = (nats || []).map(function (n) { return String(n).trim(); }).filter(Boolean);
+                if (!list.length) return;
+
+                if (list.length === 2) {
+                    const code1 = toFlagCode(list[0]);
+                    const code2 = toFlagCode(list[1]);
+                    if (code1 && code2) {
+                        const splitWrap = document.createElement("span");
+                        splitWrap.className = "modal-flag-split";
+                        splitWrap.title = list[0] + " / " + list[1];
+                        const img1 = loadFlagImg(code1, list[0], "half-tl");
+                        const img2 = loadFlagImg(code2, list[1], "half-br");
+                        splitWrap.append(img1, img2);
+                        flagBox.appendChild(splitWrap);
+                        return;
+                    }
+                }
+
+                list.forEach(function (nat) {
+                    const code = toFlagCode(nat);
+                    if (!code) return;
+                    flagBox.appendChild(loadFlagImg(code, nat, "modal-flag"));
+                });
+            }
+
+            function parseSuperValue(raw) {
+                const str = String(raw || "").trim();
+                const m = str.match(/^super\b\s*(.*)$/i);
+                if (m) {
+                    return { isSuper: true, text: m[1].trim() || "—" };
+                }
+                return { isSuper: false, text: str };
+            }
+
+            function renderModalTable(card, v) {
+                const atk = v.base_attack ?? v.base_atk;
+                const nats = (v.nationalities || []).map(function (s) { return String(s).trim(); }).filter(Boolean);
+                const weakRaw = String(v.weakness || "").trim();
+                const resRaw = String(v.resistance || "").trim();
+
+                const rows = [
+                    { label: "Version", val: (v.version || "") + " (Debut: " + (card.debut || "—") + ")" },
+                    { label: "Type", val: v.type || "—" },
+                    { label: "Archetypes", val: (v.archetypes || []).join(", ") || "—" }
+                ];
+
+                if (nats.length > 0) {
+                    rows.push({ label: "Nationality", val: nats.join(", ") });
+                }
+                if (v.hp !== null && v.hp !== undefined) {
+                    rows.push({ label: "HP / MBH", val: v.hp + " HP (" + v.mbh + " MBH)" });
+                }
+                if (atk !== null && atk !== undefined) {
+                    rows.push({ label: "Base Attack", val: atk });
+                }
+                if (weakRaw) {
+                    const parsedW = parseSuperValue(weakRaw);
+                    rows.push({ label: "Weakness", val: parsedW.text, isSuper: parsedW.isSuper });
+                }
+                if (resRaw) {
+                    const parsedR = parseSuperValue(resRaw);
+                    rows.push({ label: "Resistance", val: parsedR.text, isSuper: parsedR.isSuper });
+                }
+                if (v.stage_length !== null && v.stage_length !== undefined) {
+                    const lenText = v.stage_length === 999 ? "Infinite (∞)" : (v.stage_length + " Turns");
+                    rows.push({ label: "Stage Length", val: lenText });
+                }
+
+                rows.push({ label: "Creator", val: v.creator || v.composer || "—" });
+                rows.push({ label: "Original Series", val: v.original_series || "—" });
+                rows.push({ label: "Description", val: (v.description || "").trim() || "—", isDesc: true });
+
+                const table = document.getElementById("modalTable");
+                table.innerHTML = "";
+                const tbody = document.createElement("tbody");
+
+                rows.forEach(function (item) {
+                    const tr = document.createElement("tr");
+                    if (item.isDesc) tr.className = "desc-row";
+
+                    const tdLbl = document.createElement("td");
+                    tdLbl.textContent = item.label;
+                    if (item.isSuper) {
+                        tdLbl.appendChild(makeDangerIcon());
+                    }
+
+                    const tdVal = document.createElement("td");
+                    if (item.isDesc) {
+                        const div = document.createElement("div");
+                        div.className = "info-desc-box";
+                        div.textContent = item.val;
+                        tdVal.appendChild(div);
+                                       } else if (item.label === "Base Attack" && Number(item.val) === 999) {
+                        tdVal.style.padding = "1px 10px";
+                        tdVal.style.fontSize = "0";
+                        tdVal.appendChild(makeSkullImg(42));
+                    } else {
+                        tdVal.textContent = item.val;
+                    }
+
+
+                    tr.append(tdLbl, tdVal);
+                    tbody.appendChild(tr);
+                });
+
+                table.appendChild(tbody);
+            }
+
+            function openModal(card, activeVer) {
+                currentModalCard = card;
+                currentModalVer = activeVer;
+                isEditingModal = false;
+                modalRotation = Number(activeVer.default_rotation || 0);
+
+                const tabbar = document.getElementById("wikiTabbar");
+                tabbar.innerHTML = "";
+                (card.versions || []).forEach(function (v) {
+                    const b = document.createElement("button");
+                    b.className = "wiki-tab" + (v === activeVer ? " active" : "");
+                    b.textContent = v.version;
+                    b.onclick = function () { openModal(card, v); };
+                    tabbar.appendChild(b);
+                });
+
+                document.getElementById("modalTitle").textContent = activeVer.name || "";
+                renderHeaderFlags(activeVer.nationalities);
+
+                artBox.innerHTML = "";
+                if (activeVer.image) {
+                    const img = document.createElement("img");
+                    img.src = activeVer.image;
+                    img.alt = activeVer.name || "";
+                    img.style.cssText = "width:100%; height:100%; object-fit:contain;";
+                    img.onload = applyModalRotation;
+                    artBox.appendChild(img);
+                    applyModalRotation();
+                } else {
+                    artBox.textContent = "[ " + (activeVer.name || "") + " — " + (activeVer.version || "") + " Card Art ]";
+                }
+                artBox.appendChild(modalRotBtn);
+
+                renderModalTable(card, activeVer);
+                syncEditorVisibility();
+                document.getElementById("modalBackdrop").classList.add("open");
+            }
+
+            // Edit Mode form & export handlers
+            function addFieldRow(tbody, label, id, val, opts) {
+                opts = opts || {};
+                const tr = document.createElement("tr");
+                if (opts.multiline) tr.className = "desc-row";
+
+                const tdLabel = document.createElement("td");
+                tdLabel.textContent = label;
+
+                const tdVal = document.createElement("td");
+                const el = document.createElement(opts.multiline ? "textarea" : "input");
+                el.id = id;
+                el.className = opts.multiline ? "ed-textarea" : "ed-input";
+                if (!opts.multiline && opts.type) el.type = opts.type;
+                if (opts.placeholder) el.placeholder = opts.placeholder;
+                el.value = val;
+
+                tdVal.appendChild(el);
+                tr.append(tdLabel, tdVal);
+                tbody.appendChild(tr);
+            }
+
+            btnToggle.onclick = function () {
+                if (!currentModalCard || !currentModalVer) return;
+                isEditingModal = true;
+                syncEditorVisibility();
+
+                const v = currentModalVer;
+                const atkVal = v.base_attack ?? v.base_atk ?? "";
+                const stageVal = (v.stage_length === 999 || v.stage_length === "Infinite") ? "Infinite" : (v.stage_length ?? "");
+
+                const table = document.getElementById("modalTable");
+                table.innerHTML = "";
+                const tbody = document.createElement("tbody");
+
+                addFieldRow(tbody, "Name", "edf_name", v.name || "");
+                addFieldRow(tbody, "Debut (Card)", "edf_debut", currentModalCard.debut || "");
+                addFieldRow(tbody, "Type", "edf_type", v.type || "");
+                addFieldRow(tbody, "Archetypes", "edf_arch", (v.archetypes || []).join(", "), { placeholder: "Comma-separated" });
+                addFieldRow(tbody, "Nationality", "edf_nat", (v.nationalities || []).join(", "), { placeholder: "e.g. American, Korean (leave blank to hide)" });
+                addFieldRow(tbody, "HP", "edf_hp", v.hp ?? "", { type: "number" });
+                addFieldRow(tbody, "MBH", "edf_mbh", v.mbh ?? "", { type: "number" });
+                addFieldRow(tbody, "Base Attack", "edf_atk", atkVal, { type: "number" });
+                addFieldRow(tbody, "Weakness", "edf_weak", v.weakness || "", { placeholder: "Write 'SUPER' before to add the triangle (leave blank to hide)" });
+                addFieldRow(tbody, "Resistance", "edf_res", v.resistance || "", { placeholder: "Write 'SUPER' before to add the triangle (leave blank to hide)" });
+                addFieldRow(tbody, "Stage Length", "edf_stage", stageVal, { placeholder: "" });
+                addFieldRow(tbody, "Creator", "edf_creator", v.creator || v.composer || "");
+                addFieldRow(tbody, "Original Series", "edf_series", v.original_series || "");
+                addFieldRow(tbody, "Search Notes", "edf_notes", v.notes || "", { placeholder: "Hidden search keywords (e.g. Cancer)" });
+                addFieldRow(tbody, "Default Rotation", "edf_rot", v.default_rotation ?? 0, { placeholder: "0, 90, 180, or 270" });
+				addFieldRow(tbody, "Discontinued In", "edf_disc", currentModalCard.discontinued_in || "", { placeholder: "this will remove the card from versions after the one set" });
+                addFieldRow(tbody, "Description", "edf_desc", v.description || "", { multiline: true });
+
+                table.appendChild(tbody);
+            };
+
+            btnCancel.onclick = function () {
+                isEditingModal = false;
+                openModal(currentModalCard, currentModalVer);
+            };
+
+            btnSave.onclick = function () {
+                const v = currentModalVer;
+                v.name = document.getElementById("edf_name").value.trim();
+                currentModalCard.debut = document.getElementById("edf_debut").value.trim();
+                v.type = document.getElementById("edf_type").value.trim();
+
+                const rawArch = document.getElementById("edf_arch").value.trim();
+                v.archetypes = rawArch ? rawArch.split(",").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+
+                const rawNat = document.getElementById("edf_nat").value.trim();
+                v.nationalities = rawNat ? rawNat.split(",").map(function (s) { return s.trim(); }).filter(Boolean) : [];
+
+                const hpRaw = document.getElementById("edf_hp").value.trim();
+                v.hp = hpRaw === "" ? null : Number(hpRaw);
+
+                const mbhRaw = document.getElementById("edf_mbh").value.trim();
+                v.mbh = mbhRaw === "" ? null : Number(mbhRaw);
+
+                const atkRaw = document.getElementById("edf_atk").value.trim();
+                const atkNum = atkRaw === "" ? null : Number(atkRaw);
+                v.base_attack = atkNum;
+                if ("base_atk" in v) v.base_atk = atkNum;
+				
+				const discVal = document.getElementById("edf_disc").value.trim();
+if (discVal) currentModalCard.discontinued_in = discVal;
+else delete currentModalCard.discontinued_in;
+
+
+                v.weakness = document.getElementById("edf_weak").value.trim();
+                v.resistance = document.getElementById("edf_res").value.trim();
+
+                const stRaw = document.getElementById("edf_stage").value.trim();
+                if (stRaw === "") v.stage_length = null;
+                else if (stRaw.toLowerCase() === "infinite" || stRaw === "\u221e" || stRaw === "999") v.stage_length = 999;
+                else v.stage_length = isNaN(Number(stRaw)) ? stRaw : Number(stRaw);
+
+                v.creator = document.getElementById("edf_creator").value.trim();
+                if ("composer" in v) v.composer = v.creator;
+                v.original_series = document.getElementById("edf_series").value.trim();
+                v.notes = document.getElementById("edf_notes").value.trim();
+                v.description = document.getElementById("edf_desc").value;
+
+                const rotRaw = Number(document.getElementById("edf_rot").value.trim());
+                const validRots = [0, 90, 180, 270];
+                v.default_rotation = validRots.indexOf(rotRaw) !== -1 ? rotRaw : 0;
+
+                try { localStorage.setItem(STORAGE_KEY, JSON.stringify(CARDS)); } catch (e) {}
+                isEditingModal = false;
+                refreshControlsFromData();
+                render();
+                openModal(currentModalCard, v);
+            };
+
+            btnClearDraft.onclick = function () {
+                if (!confirm("Discard unsaved browser edits and reload directly from cards.json?")) return;
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            };
+
+            btnExportJson.onclick = function () {
+                const payload = JSON.stringify({ cards: CARDS }, null, 2);
+                downloadFile("cards.json", payload, "application/json");
+            };
+
+            btnExportCsv.onclick = function () {
+                const headers = [
+                    "Card_ID", "Name", "Version", "Type", "Archetypes", "Nationality",
+                    "HP", "MBH", "Base_Attack", "Weakness", "Resistance", "Stage_Length",
+                    "Creator", "Original_Series", "Image_Path", "Notes", "Description"
+                ];
+                const lines = [headers.join(",")];
+
+                CARDS.forEach(function (c) {
+                    (c.versions || []).forEach(function (v) {
+                        const atk = v.base_attack ?? v.base_atk ?? "";
+                        const st = v.stage_length === 999 ? "Infinite" : (v.stage_length ?? "");
+                        const row = [
+                            c.id || "",
+                            v.name || "",
+                            v.version || "",
+                            v.type || "",
+                            (v.archetypes || []).join(", "),
+                            (v.nationalities || []).join(", "),
+                            v.hp ?? "",
+                            v.mbh ?? "",
+                            atk,
+                            v.weakness || "",
+                            v.resistance || "",
+                            st,
+                            v.creator || v.composer || "",
+                            v.original_series || "",
+                            v.image || "",
+                            v.notes || "",
+                            v.description || ""
+                        ].map(csvEscape);
+                        lines.push(row.join(","));
+                    });
+                });
+
+                downloadFile("cards.csv", lines.join("\r\n"), "text/csv;charset=utf-8;");
+            };
+
+            function csvEscape(val) {
+                const s = String(val ?? "");
+                return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+            }
+
+            function downloadFile(filename, content, mime) {
+                const blob = new Blob([content], { type: mime });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            }
+
+            // Left-rail versions, folder tabs, dropdowns, and sliders
+           function buildVersionButtons(versions) {
+    const versionList = document.getElementById("versionList");
+    if (!versionList) return;
+    versionList.innerHTML = "";
+
+    const verOnly = versions.filter(function (v) { return v !== "ALL" && v !== "1.8.3"; });
+    verOnly.sort(function (a, b) {
+        const na = parseFloat(a);
+        const nb = parseFloat(b);
+        if (!isNaN(na) && !isNaN(nb) && na !== nb) return nb - na;
+        return String(b).localeCompare(String(a), undefined, { numeric: true });
+    });
+
+    if (verOnly.length && verOnly.indexOf(state.version) === -1) {
+        state.version = verOnly.slice(0, 1).join("");
+    }
+
+    verOnly.forEach(function (ver) {
+        const btn = document.createElement("button");
+        btn.className = "ver-btn" + (ver === state.version ? " active" : "");
+        btn.textContent = ver;
+        btn.onclick = function () {
+            document.querySelectorAll(".ver-btn").forEach(function (b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            state.version = ver;
+            render();
+        };
+        versionList.appendChild(btn);
+    });
+}
+
+
+            function fillSelect(id, values) {
+                const sel = document.getElementById(id);
+                if (!sel) return;
+                const prevVal = sel.value;
+                while (sel.options.length > 1) sel.remove(1);
+                [...new Set(values.filter(Boolean))].sort().forEach(function (v) {
+                    sel.add(new Option(v, v));
+                });
+                if ([...sel.options].some(function (o) { return o.value === prevVal; })) {
+                    sel.value = prevVal;
+                }
+            }
+
+            function refreshControlsFromData() {
+                const allVersions = CARDS.flatMap(function (c) { return c.versions || []; });
+
+                fillSelect("debutSelect", CARDS.map(function (c) { return c.debut; }));
+                fillSelect("archetypeSelect", allVersions.flatMap(function (v) { return v.archetypes || []; }));
+                fillSelect("creatorSelect", allVersions.map(function (v) { return v.creator || v.composer; }));
+                fillSelect("seriesSelect", allVersions.map(function (v) { return v.original_series; }));
+                fillSelect("nationalitySelect", allVersions.flatMap(function (v) { return v.nationalities || []; }));
+
+                // MBH slider bounds
+                const mbhVals = allVersions.map(function (v) { return v.mbh; }).filter(function (n) { return typeof n === "number" && !isNaN(n); });
+                const minMbh = mbhVals.length ? Math.min(...mbhVals) : 0;
+                const maxMbh = mbhVals.length ? Math.max(...mbhVals) : 4;
+                ["mbhMin", "mbhMax"].forEach(function (id) {
+                    const el = document.getElementById(id);
+                    el.min = minMbh;
+                    el.max = maxMbh;
+                });
+                document.getElementById("mbhMin").value = minMbh;
+                document.getElementById("mbhMax").value = maxMbh;
+                state.mbhMin = minMbh;
+                state.mbhMax = maxMbh;
+                document.getElementById("mbhReadout").textContent = "Any";
+
+                // Discrete stepped BASE ATTACK slider
+                const atkVals = allVersions.map(function (v) { return v.base_attack ?? v.base_atk; }).filter(function (n) { return typeof n === "number" && !isNaN(n); });
+                ATK_STEPS = atkVals.length ? [...new Set(atkVals)].sort(function (a, b) { return a - b; }) : [0, 50];
+                const maxAtkIdx = ATK_STEPS.length - 1;
+                ["atkMin", "atkMax"].forEach(function (id) {
+                    const el = document.getElementById(id);
+                    el.min = 0;
+                    el.max = maxAtkIdx;
+                    el.step = 1;
+                });
+                document.getElementById("atkMin").value = 0;
+                document.getElementById("atkMax").value = maxAtkIdx;
+                state.atkMin = 0;
+                state.atkMax = maxAtkIdx;
+                document.getElementById("atkReadout").textContent = "Any";
+
+                // Discrete 3-notch STAGE LENGTH slider (4, 8, ∞)
+                document.getElementById("stageMin").min = 0;
+                document.getElementById("stageMin").max = 2;
+                document.getElementById("stageMax").min = 0;
+                document.getElementById("stageMax").max = 2;
+                document.getElementById("stageMin").value = 0;
+                document.getElementById("stageMax").value = 2;
+                state.stageMin = 0;
+                state.stageMax = 2;
+                document.getElementById("stageReadout").textContent = "Any";
+
+                // Left-rail VER. SELECT buttons
+                const presentVers = [...new Set(allVersions.map(function (v) { return v.version; }).filter(Boolean))].reverse();
+                buildVersionButtons(presentVers.length ? ["ALL", ...presentVers] : DEFAULT_VERSIONS);
+            }
+
+            document.querySelectorAll(".folder-tab").forEach(function (tab) {
+                tab.onclick = function () {
+                    document.querySelectorAll(".folder-tab").forEach(function (t) { t.classList.remove("active"); });
+                    tab.classList.add("active");
+                    state.type = tab.dataset.type;
+                    const isStage = state.type === "STAGE";
+                    const isNoCombatStat = ["STAGE", "GAMBLING BLUE", "GAMBLING RED", "HAVOC"].includes(state.type);
+
+                    document.getElementById("mbhBlock").style.display = isNoCombatStat ? "none" : "block";
+                    document.getElementById("atkBlock").style.display = isNoCombatStat ? "none" : "block";
+                    document.getElementById("stageLengthBlock").style.display = isStage ? "block" : "none";
+
+                    render();
+                };
+            });
+
+            document.getElementById("searchInput").oninput = function (e) {
+                state.search = e.target.value.toLowerCase();
+                render();
+            };
+            document.getElementById("sortSelect").onchange = function (e) {
+                state.sort = e.target.value;
+                render();
+            };
+
+            [
+                ["debutSelect", "debut"],
+                ["archetypeSelect", "archetype"],
+                ["creatorSelect", "creator"],
+                ["seriesSelect", "series"],
+                ["nationalitySelect", "nationality"]
+            ].forEach(function (pair) {
+                const sel = document.getElementById(pair[0]);
+                if (sel) {
+                    sel.onchange = function () {
+                        state[pair[1]] = sel.value;
+                        render();
+                    };
+                }
+            });
+
+            function bindSlider(minId, maxId, outId, suffix) {
+                const minEl = document.getElementById(minId);
+                const maxEl = document.getElementById(maxId);
+                const fn = function () {
+                    let lo = +minEl.value;
+                    let hi = +maxEl.value;
+                    if (lo > hi) [lo, hi] = [hi, lo];
+                    state[minId] = lo;
+                    state[maxId] = hi;
+
+                    const minLimit = Number(minEl.min);
+                    const maxLimit = Number(maxEl.max);
+                    const outEl = document.getElementById(outId);
+
+                    if (lo === minLimit && hi === maxLimit) {
+                        outEl.textContent = "Any";
+                    } else if (minId === "atkMin") {
+                        const loVal = ATK_STEPS[lo] ?? 0;
+                        const hiVal = ATK_STEPS[hi] ?? 999;
+                        outEl.textContent = "";
+                        if (loVal === 999) {
+                            outEl.appendChild(makeSkullImg(20));
+                        } else {
+                            outEl.appendChild(document.createTextNode(loVal + " ATK"));
+                        }
+                        outEl.appendChild(document.createTextNode(" \u2013 "));
+                        if (hiVal === 999) {
+                            outEl.appendChild(makeSkullImg(20));
+                        } else {
+                            outEl.appendChild(document.createTextNode(hiVal + " ATK"));
+                        }
+                    } else if (minId === "stageMin") {
+                        const fmtStage = function (idx) {
+                            const real = STAGE_STEPS[idx];
+                            return real === 999 ? "∞" : (real + " Turns");
+                        };
+                        outEl.textContent = fmtStage(lo) + " – " + fmtStage(hi);
+                    } else {
+                        outEl.textContent = lo + suffix + " – " + hi + suffix;
+                    }
+                    render();
+                };
+                minEl.oninput = fn;
+                maxEl.oninput = fn;
+            }
+
+            bindSlider("mbhMin", "mbhMax", "mbhReadout", " MBH");
+            bindSlider("atkMin", "atkMax", "atkReadout", " ATK");
+            bindSlider("stageMin", "stageMax", "stageReadout", " Turns");
+
+            document.getElementById("resetBtn").onclick = function () {
+                state.search = "";
+                document.getElementById("searchInput").value = "";
+                [
+                    ["debutSelect", "debut"],
+                    ["archetypeSelect", "archetype"],
+                    ["creatorSelect", "creator"],
+                    ["seriesSelect", "series"],
+                    ["nationalitySelect", "nationality"]
+                ].forEach(function (pair) {
+                    state[pair[1]] = "ALL";
+                    const sel = document.getElementById(pair[0]);
+                    if (sel) sel.value = "ALL";
+                });
+
+                ["mbh", "atk", "stage"].forEach(function (k) {
+                    const minEl = document.getElementById(k + "Min");
+                    const maxEl = document.getElementById(k + "Max");
+                    const minVal = Number(minEl.min);
+                    const maxVal = Number(maxEl.max);
+                    minEl.value = minVal;
+                    maxEl.value = maxVal;
+                    state[k + "Min"] = minVal;
+                    state[k + "Max"] = maxVal;
+                    document.getElementById(k + "Readout").textContent = "Any";
+                });
+
+                render();
+            };
+
+            document.getElementById("modalClose").onclick = function () {
+                document.getElementById("modalBackdrop").classList.remove("open");
+            };
+            document.getElementById("modalBackdrop").onclick = function (e) {
+                if (e.target.id === "modalBackdrop") e.target.classList.remove("open");
+            };
+
+           function compareVersions(a, b) {
+    const sa = String(a || "").trim().toUpperCase();
+    const sb = String(b || "").trim().toUpperCase();
+    if (sa === sb) return 0;
+
+    const betaA = sa.indexOf("BETA") !== -1;
+    const betaB = sb.indexOf("BETA") !== -1;
+
+    const partsA = sa.replace(/[^0-9.]/g, "").split(".").filter(Boolean).map(Number);
+    const partsB = sb.replace(/[^0-9.]/g, "").split(".").filter(Boolean).map(Number);
+    const len = Math.max(partsA.length, partsB.length);
+
+    for (let i = 0; i < len; i++) {
+        const numA = partsA[i] || 0;
+        const numB = partsB[i] || 0;
+        if (numA !== numB) return numA - numB;
+    }
+
+    if (betaA !== betaB) return betaA ? -1 : 1;
+    return sa.localeCompare(sb, undefined, { numeric: true });
+}
+
+function render() {
+    document.body.classList.toggle("theme-legendary", state.subFilter === "LEGENDARY");
+    let list = new Array();
+    CARDS.forEach(function (c) {
+        const versions = (c.versions || new Array()).slice().sort(function (a, b) {
+            return compareVersions(a.version, b.version);
+        });
+        if (!versions.length) return;
+
+        if (state.version === "ALL" || state.version === "LATEST") {
+            list.push({ card: c, ver: versions[versions.length - 1] });
+        } else {
+            const eligible = versions.filter(function (x) {
+                return compareVersions(x.version, state.version) <= 0;
+            });
+
+            if (eligible.length) {
+                list.push({ card: c, ver: eligible[eligible.length - 1] });
+            }
+        }
+    });
+    document.getElementById("totCount").textContent = list.length;
+
+
+                const mbhMinLimit = Number(document.getElementById("mbhMin").min);
+                const mbhMaxLimit = Number(document.getElementById("mbhMax").max);
+                const atkMinLimit = Number(document.getElementById("atkMin").min);
+                const atkMaxLimit = Number(document.getElementById("atkMax").max);
+                const stageMinLimit = Number(document.getElementById("stageMin").min);
+                const stageMaxLimit = Number(document.getElementById("stageMax").max);
+
+                list = list.filter(function (item) {
+                    const card = item.card;
+                    const ver = item.ver;
+
+            const rawTypes = (ver.type || "").toUpperCase().split(/[,/|]+/).map(function (s) { return s.trim(); });
+        const hasDiscTag = rawTypes.includes("DISCONTINUED");
+        const isDiscontinuedNow = card.discontinued_in
+            ? compareVersions(state.version, card.discontinued_in) >= 0
+            : hasDiscTag;
+
+        const isLegendary = rawTypes.some(function (t) { return t === "LEGENDARY" || t.split(/\s+/).includes("LEGENDARY"); });
+        const isSuperVip = rawTypes.some(function (t) { return t === "SUPER VIP" || t === "SUPER" || t.split(/\s+/).includes("SUPER"); });
+
+        if (state.type.toUpperCase() === "DISCONTINUED") {
+            if (!isDiscontinuedNow) return false;
+        } else {
+            if (isDiscontinuedNow) return false;
+            const tabKey = state.type.toUpperCase().replace(/S$/, "");
+            if (tabKey !== "ALL") {
+                const matchesBase = rawTypes.some(function (t) { return t.replace(/S$/, "") === tabKey; });
+                const matchesSub = (tabKey === "MONSTER" && isLegendary) || (tabKey === "VIP" && isSuperVip);
+                if (!matchesBase && !matchesSub) return false;
+            }
+        }
+
+        const tabKey = state.type.toUpperCase().replace(/S$/, "");
+        if (tabKey === "MONSTER") {
+            if (state.subFilter === "LEGENDARY" ? !isLegendary : isLegendary) return false;
+        }
+        if (tabKey === "VIP") {
+            if (state.subFilter === "SUPER" ? !isSuperVip : isSuperVip) return false;
+        }
+
+
+                    if (state.search) {
+                        const hay = (
+                            (ver.name || "") + " " +
+                            (ver.notes || "") + " " +
+                            (ver.archetypes || []).join(" ") + " " +
+                            (ver.tags || "")
+                        ).toLowerCase();
+                        if (!hay.includes(state.search)) return false;
+                    }
+
+                    if (state.debut !== "ALL" && card.debut !== state.debut) return false;
+                    if (state.archetype !== "ALL" && !(ver.archetypes || []).includes(state.archetype)) return false;
+                    if (state.creator !== "ALL" && (ver.creator || ver.composer) !== state.creator) return false;
+                    if (state.series !== "ALL" && ver.original_series !== state.series) return false;
+                    if (state.nationality !== "ALL" && !(ver.nationalities || []).includes(state.nationality)) return false;
+
+                    if (state.mbhMin > mbhMinLimit || state.mbhMax < mbhMaxLimit) {
+                        if (ver.mbh === null || ver.mbh === undefined || ver.mbh < state.mbhMin || ver.mbh > state.mbhMax) {
+                            return false;
+                        }
+                    }
+
+                    if (state.atkMin > atkMinLimit || state.atkMax < atkMaxLimit) {
+                        const atk = ver.base_attack ?? ver.base_atk;
+                        const minAtkVal = ATK_STEPS[state.atkMin] ?? 0;
+                        const maxAtkVal = ATK_STEPS[state.atkMax] ?? 999;
+                        if (atk === null || atk === undefined || atk < minAtkVal || atk > maxAtkVal) {
+                            return false;
+                        }
+                    }
+
+                    if (state.stageMin > stageMinLimit || state.stageMax < stageMaxLimit) {
+                        const minVal = STAGE_STEPS[state.stageMin] ?? 4;
+                        const maxVal = STAGE_STEPS[state.stageMax] ?? 999;
+                        const rawLen = ver.stage_length;
+                        const numLen = (rawLen === "Infinite" || rawLen === "∞" || rawLen === Infinity) ? 999 : Number(rawLen);
+                        if (rawLen === null || rawLen === undefined || rawLen === "" || isNaN(numLen) || numLen < minVal || numLen > maxVal) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                });
+
+                // Anchor numbered sets (e.g., JOH1..JOH6) to their "1" card's name
+                const setAnchorName = {};
+                list.forEach(function (item) {
+                    const m = (item.card.id || "").match(/^(.+?)(\d+)$/);
+                    if (m) {
+                        const prefix = m[1];
+                        const num = Number(m[2]);
+                        if (!setAnchorName[prefix] || num < setAnchorName[prefix].num) {
+                            setAnchorName[prefix] = { num: num, name: item.ver.name || "" };
+                        }
+                    }
+                });
+
+                list.sort(function (a, b) {
+                    const atkA = a.ver.base_attack ?? a.ver.base_atk ?? -1;
+                    const atkB = b.ver.base_attack ?? b.ver.base_atk ?? -1;
+                    if (state.sort === "mbh_desc") return (b.ver.mbh ?? -1) - (a.ver.mbh ?? -1);
+                    if (state.sort === "atk_desc") return atkB - atkA;
+                    if (state.sort === "stage_desc") return (b.ver.stage_length ?? -1) - (a.ver.stage_length ?? -1);
+                    if (state.sort === "debut_asc") return (a.card.debut || "").localeCompare(b.card.debut || "");
+                    if (state.sort === "versions_desc") return (b.card.versions || []).length - (a.card.versions || []).length;
+
+                    const idA = a.card.id || "";
+                    const idB = b.card.id || "";
+                    const mA = idA.match(/^(.+?)(\d+)$/);
+                    const mB = idB.match(/^(.+?)(\d+)$/);
+
+                    const sortNameA = mA ? setAnchorName[mA[1]].name : (a.ver.name || "");
+                    const sortNameB = mB ? setAnchorName[mB[1]].name : (b.ver.name || "");
+
+                    const nameCmp = sortNameA.localeCompare(sortNameB, undefined, { numeric: true });
+                    if (nameCmp !== 0) return nameCmp;
+
+                    if (mA && mB && mA[1] === mB[1]) {
+                        return idA.localeCompare(idB, undefined, { numeric: true });
+                    }
+                    return (a.ver.name || "").localeCompare(b.ver.name || "", undefined, { numeric: true });
+                });
+
+                document.getElementById("visCount").textContent = list.length;
+                const grid = document.getElementById("cardGrid");
+                grid.innerHTML = "";
+                list.forEach(function (item) {
+                    const card = item.card;
+                    const ver = item.ver;
+                    const tile = document.createElement("div");
+                    tile.className = "card-tile";
+                  if (ver.image) {
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.alt = ver.name || "";
+    img.src = ver.image;
+    tile.appendChild(img);
+}
+else {
+                        const top = document.createElement("div");
+                        top.style.cssText = "font-size:0.72rem; color:#4ade80; font-weight:700; border-bottom:1px solid #061709; padding-bottom:4px;";
+                        top.textContent = (ver.type || "") + " · " + (ver.version || "");
+
+                        const mid = document.createElement("div");
+                        mid.style.cssText = "font-family:var(--font-display); font-size:1.15rem; font-weight:700; text-align:center; text-shadow:2px 2px 0 #000;";
+                        mid.textContent = ver.name || "";
+
+                        const bot = document.createElement("div");
+                        bot.style.cssText = "font-size:0.76rem; color:#a9baa5; text-align:center; border-top:1px solid #061709; padding-top:4px;";
+                        bot.textContent = (ver.hp !== null && ver.hp !== undefined) ? (ver.hp + " HP (" + ver.mbh + " MBH)") : "Special Card";
+
+                        tile.append(top, mid, bot);
+                    }
+                    tile.onclick = function () { openModal(card, ver); };
+                    grid.appendChild(tile);
+                });
+            }
+
+            // Initialize UI and load cards.json once
+            buildVersionButtons(DEFAULT_VERSIONS);
+            syncEditorVisibility();
+
+            fetch("cards.json?v=" + Date.now())
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    CARDS = Array.isArray(data) ? data : (data.cards || []);
+                    const saved = localStorage.getItem(STORAGE_KEY);
+                    if (saved) {
+                        try {
+                            const parsed = JSON.parse(saved);
+                            if (Array.isArray(parsed) && parsed.length) {
+                                CARDS = parsed;
+                            }
+                        } catch (e) {}
+                    }
+                    refreshControlsFromData();
+                    render();
+                });
+        })();
+		
+    </script>
+</body>
+
+</html>
