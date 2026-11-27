@@ -670,13 +670,18 @@
           "type": "VIP",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "FL STUDIO",
+          "original_series": "FL Studio",
           "hp": 54,
           "mbh": 3,
           "base_attack": null,
           "stage_length": null,
           "notes": "MUSIC, SOUND",
-          "image": "cards/1.0 BETA/VIPdeck_09.png"
+          "image": "cards/1.0 BETA/VIPdeck_09.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "1.3",
@@ -1501,7 +1506,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "Dark Inferno, Blood Storm",
-          "image": "cards/1.0 BETA/deck1_03.png"
+          "image": "cards/1.0 BETA/deck1_03.png",
+          "nationalities": [
+            "ROMANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -1517,7 +1529,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_40.png"
+          "image": "cards/2.0/MonsterP1_40.png",
+          "nationalities": [
+            "ROMANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -1541,7 +1560,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "This shit ain't nothing to me man",
-          "image": "cards/1.0 BETA/deck1_04.png"
+          "image": "cards/1.0 BETA/deck1_04.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "1.8.1",
@@ -1557,7 +1583,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_14.png"
+          "image": "cards/1.8.1/MonsterP1_14.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -1573,7 +1606,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_41.png"
+          "image": "cards/2.0/MonsterP1_41.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -1598,7 +1638,14 @@
           "base_attack": 8,
           "stage_length": null,
           "notes": "Daily Dose",
-          "image": "cards/1.0 BETA/deck1_05.png"
+          "image": "cards/1.0 BETA/deck1_05.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -1615,7 +1662,14 @@
           "base_attack": 8,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_42.png"
+          "image": "cards/2.0/MonsterP1_42.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -1679,7 +1733,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "Beautiful Disaster",
-          "image": "cards/1.0 BETA/deck1_07.png"
+          "image": "cards/1.0 BETA/deck1_07.png",
+          "nationalities": [
+            "SOVIET"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -1695,7 +1756,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_44.png"
+          "image": "cards/2.0/MonsterP1_44.png",
+          "nationalities": [
+            "SOVIET"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -1711,7 +1779,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_55.png"
+          "image": "cards/2.2/MonsterP1_55.png",
+          "nationalities": [
+            "SOVIET"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -1791,7 +1866,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "Fluo-Charge",
-          "image": "cards/1.0 BETA/deck1_09.png"
+          "image": "cards/1.0 BETA/deck1_09.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "The main character, she was already legendary as a effective and simply hard-hitting card but then Weirdo Dingo swapped her Weakness and Resistance, making her invincible and that kind of elevated her to Legendary status. \n\nthe background to her image is the album cover of \"Axis: Bold as Love\" by Jimi Hendrix - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -1807,7 +1889,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_52.png"
+          "image": "cards/2.0/MonsterP1_52.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Fluoozy originally was not going to exist, the intention was to replace the old Fluoride Girl with the other one. \n\nbut because of how iconic she was I chose to instead turn her into her own character, Fluoozy. \n\nincidentally, Floozy apparently is a old-timey slang for Whore, the more you know. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -2039,7 +2128,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "GLIZZED OUT OF THE PARK",
-          "image": "cards/1.0 BETA/deck1_14.png"
+          "image": "cards/1.0 BETA/deck1_14.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Glizzy was not exempt from her own move in this version, so using it simply skipped that turn? even worse it only says one turn, which means it just stuns YOU and your opponent gets to act... \n\nDid you know she loves Italian Food? - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -2055,7 +2151,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_62.png"
+          "image": "cards/2.0/MonsterP1_62.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "In this version it was clarified that it's everyone except her, but it STILL says only one turn which means it is sill useless, even then Glizzed out of the Park only has 2 ATK Power, so the combo only does 8 damage even if it worked is that really worth sacrificing the rest of your teams turns? \n\nDid you know her favourite color is Burgundy? - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -2071,7 +2174,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP2_10.png"
+          "image": "cards/2.2/MonsterP2_10.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "In this version it was FINALLY correctly written to be one round, meaning it is actually good now. \nadditionally Glizzed out of the Park was buffed from 2 ATK Power to 3 ATK Power, meaning the combo does 12 damage now. \n\nthat makes her quite a big deal now.\ndid you know her favourite song is \"I don't think so\" by Dinosaur Jr. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -2249,7 +2359,14 @@
           "base_attack": 7,
           "stage_length": null,
           "notes": "GUN",
-          "image": "cards/1.0 BETA/deck1_18.png"
+          "image": "cards/1.0 BETA/deck1_18.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -2265,7 +2382,14 @@
           "base_attack": 7,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_66.png"
+          "image": "cards/2.0/MonsterP1_66.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -2385,7 +2509,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck1_21.png"
+          "image": "cards/1.0 BETA/deck1_21.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Happy Gilmore is easily one of the strongest Monsters in the game, there is zero situation where he is not good to have. \n\nand he has only gotten better, when he was originally written the average VIP had around 50-60 HP, where the average now is only 30 HP, so he has gotten twice as effective while remaining unchanged. \n\nthe funny part is that I thought ANYONE would ever use that secondary ability of his. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -2401,7 +2532,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_01.png"
+          "image": "cards/2.0/MonsterP2_01.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Happy Gilmore is easily one of the strongest Monsters in the game, there is zero situation where he is not good to have. \n\nand he has only gotten better, when he was originally written the average VIP had around 50-60 HP, where the average now is only 30 HP, so he has gotten twice as effective while remaining unchanged. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -2417,7 +2555,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP2_20.png"
+          "image": "cards/2.2/MonsterP2_20.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Happy Gilmore is easily one of the strongest Monsters in the game, there is zero situation where he is not good to have. \n\nand he has only gotten better, when he was originally written the average VIP had around 50-60 HP, where the average now is only 30 HP, so he has gotten twice as effective while remaining unchanged. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -2673,7 +2818,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "OVERDRIVE",
-          "image": "cards/1.0 BETA/deck1_27.png"
+          "image": "cards/1.0 BETA/deck1_27.png",
+          "nationalities": [
+            "CHINESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Iron Palm was actually added to the game before the titular character Fluoride Girl was, for that brief time Iron Palm was the mascot of the game rather than her. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -2689,7 +2841,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_13.png"
+          "image": "cards/2.0/MonsterP2_13.png",
+          "nationalities": [
+            "CHINESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Iron Palm is pretty fascinating in that there is nothing separating him from a Legendary Monster other than not being called a Legendary Monster, he is one of a few I'd consider \"Pseudo Legendaries\" - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -2920,14 +3079,19 @@
             "Snowball",
             "Tumble"
           ],
-          "creator": "WILL",
+          "creator": "NICKO",
           "original_series": "",
           "hp": 45,
           "mbh": 2,
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_29.png"
+          "image": "cards/2.0/MonsterP2_29.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -3073,15 +3237,22 @@
           "base_attack": 15,
           "stage_length": null,
           "notes": "Legendary, ATOMIC MILK SMASH, HOW DARE YOU",
-          "image": "cards/1.0 BETA/deck1_36.png"
+          "image": "cards/1.0 BETA/deck1_36.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Milk Bud was specifically designed to be the strongest possible Monster, he is the ceiling for strength in the game. \n\ndespite this, in his mere two appearances he has been defeated, so even the strongest are not invincible. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
           "name": "Milk Bud",
           "type": "MONSTER, LEGENDARY",
           "archetypes": [
-            "Smother",
-            "Reflex"
+            "Reflex",
+            "Smother"
           ],
           "creator": "NICKO",
           "original_series": "FLUONKO",
@@ -3090,7 +3261,14 @@
           "base_attack": 15,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/LEGENDARY_04.png"
+          "image": "cards/2.0/LEGENDARY_04.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Milk Bud was specifically designed to be the strongest possible Monster, he is the ceiling for strength in the game. \n\ndespite this, in his mere two appearances he has been defeated, so even the strongest are not invincible. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -3247,7 +3425,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "MISFIRE",
-          "image": "cards/1.0 BETA/deck1_40.png"
+          "image": "cards/1.0 BETA/deck1_40.png",
+          "nationalities": [
+            "ITALIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "The odds of getting the Misfire off are almost identical to the actual odds in Project M. specifically.\nwith the caveat that I made two numbers valid on the dice to placebo you into thinking the odds are significantly better. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -3264,7 +3449,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_40.png"
+          "image": "cards/2.0/MonsterP2_40.png",
+          "nationalities": [
+            "ITALIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "The odds of getting the Misfire off are almost identical to the actual odds in Project M. specifically.\nwith the caveat that I made two numbers valid on the dice to placebo you into thinking the odds are significantly better. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -3533,7 +3725,7 @@
             "Goon"
           ],
           "creator": "NICKO",
-          "original_series": "Sonic The Hedgehog",
+          "original_series": "Sonic the Hedgehog",
           "hp": 2,
           "mbh": 0,
           "base_attack": 1,
@@ -3698,7 +3890,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_54.png"
+          "image": "cards/2.0/MonsterP2_54.png",
+          "nationalities": [
+            "SOVIET"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -3751,7 +3950,7 @@
           ],
           "weakness": "Greens",
           "resistance": "Bad Air",
-          "description": "Of course this bastard didn't need any revision.",
+          "description": "Of course this bastard didn't need any revision. - K\n\nHe actually did get a revision, in 2.2 the Comp. credit at the bottom was revised, but that was overlooked. - Nicko",
           "default_rotation": 0
         }
       ]
@@ -3816,7 +4015,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck1_52.png"
+          "image": "cards/1.0 BETA/deck1_52.png",
+          "nationalities": [
+            "ROMANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -3832,7 +4038,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_57.png"
+          "image": "cards/2.0/MonsterP2_57.png",
+          "nationalities": [
+            "ROMANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -4249,7 +4462,7 @@
           ],
           "weakness": "Psychic, Mental",
           "resistance": "Guns",
-          "description": "Originally inspired by the Lain seen in the PS1 story, but basically just 'other' Lain in general.",
+          "description": "Originally inspired by the Lain seen in the PS1 story, but basically just 'other' Lain in general. - K \n\nThis was the first Suicide Point Monster, so unlike every other one this one explains what Suicide Points do. \nit was pretty notorious for being the most needlessly verbose Monster at the time. - Nicko",
           "default_rotation": 0
         },
         {
@@ -4272,7 +4485,7 @@
           ],
           "weakness": "Psychic, Mental",
           "resistance": "Guns",
-          "description": "She now has 1 whole extra HP. And a shiny new Special Team Ability. And rewording.",
+          "description": "She now has 1 whole extra HP. And a shiny new Special Team Ability. And rewording. - K \n\nThe bigger difference is that her first ability stuns for 1 round instead of 1 turn, that means it actually does something now, additionally many of the conditions of \"Fake Alter Ego\" were stripped making the move much more simple. - Nicko",
           "default_rotation": 0
         },
         {
@@ -4295,7 +4508,7 @@
           ],
           "weakness": "Psychic, Mental",
           "resistance": "Guns",
-          "description": "",
+          "description": "I added the cooldown to \"Schizo Spin\" because before it meant you could just target someone with \"Fake Alter Ego\" every turn, making the fact that it auto-targets the weakest Monster totally pointless.\n\nsadly this nerfed her pretty bad and she needs a buff. - Nicko",
           "default_rotation": 0
         }
       ]
@@ -4489,7 +4702,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP3_09.png"
+          "image": "cards/2.0/MonsterP3_09.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -4592,7 +4812,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck1_68.png"
+          "image": "cards/1.0 BETA/deck1_68.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "This was the first Monster card ever, the move on it made absolutely no sense and doesn't even align with the mechanics of the game, house rules were that it meant you sacrificed a Monster for 15 ATK Power. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -4608,7 +4835,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP3_15.png"
+          "image": "cards/2.0/MonsterP3_15.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "His move was finally changed so that it made sense, he also gained the little badge to commemorate that he was the first and that every other Monster was born from his template.\n - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -4626,7 +4860,7 @@
             "Charge"
           ],
           "creator": "NICKO",
-          "original_series": "Sonic The Hedgehog",
+          "original_series": "Sonic the Hedgehog",
           "hp": 10,
           "mbh": 0,
           "base_attack": 4,
@@ -4865,7 +5099,7 @@
       "versions": [
         {
           "version": "1.0 BETA",
-          "name": "Dr. Kenzo Tenma, Surgeon",
+          "name": "Dr. Kenzo Tenma, surgeon",
           "type": "MONSTER",
           "archetypes": [],
           "creator": "PARAFIN",
@@ -4875,7 +5109,15 @@
           "base_attack": 10,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_05.png"
+          "image": "cards/1.0 BETA/deck_05.png",
+          "nationalities": [
+            "JAPANESE",
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "1.8.1",
@@ -4891,7 +5133,15 @@
           "base_attack": 10,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP2_48.png"
+          "image": "cards/1.8.1/MonsterP2_48.png",
+          "nationalities": [
+            "JAPANESE",
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -4907,7 +5157,15 @@
           "base_attack": 10,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP3_22.png"
+          "image": "cards/2.0/MonsterP3_22.png",
+          "nationalities": [
+            "JAPANESE",
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5384,7 +5642,7 @@
             "Snowball"
           ],
           "creator": "NICKO",
-          "original_series": "Rhyhm 'n' Face",
+          "original_series": "Rhythm 'n' Face",
           "hp": 9,
           "mbh": 0,
           "base_attack": 1,
@@ -5653,7 +5911,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_21.png"
+          "image": "cards/1.0 BETA/deck_21.png",
+          "nationalities": [
+            "ALBANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "1.8.1",
@@ -5669,7 +5934,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP3_05.png"
+          "image": "cards/1.8.1/MonsterP3_05.png",
+          "nationalities": [
+            "ALBANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5685,7 +5957,14 @@
           "base_attack": 5,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_07.png"
+          "image": "cards/2.0/MonsterP1_07.png",
+          "nationalities": [
+            "ALBANIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5709,7 +5988,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_22.png"
+          "image": "cards/1.0 BETA/deck_22.png",
+          "nationalities": [
+            "EGYPTIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5725,7 +6011,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_09.png"
+          "image": "cards/2.0/MonsterP1_09.png",
+          "nationalities": [
+            "EGYPTIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5749,7 +6042,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_23.png"
+          "image": "cards/1.0 BETA/deck_23.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5765,7 +6065,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_11.png"
+          "image": "cards/2.0/MonsterP1_11.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5789,7 +6096,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_24.png"
+          "image": "cards/1.0 BETA/deck_24.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "This Lain was meant to be a direct counterpart to the other one, I even went out of my way to make the color theory imply that. \n\nshe was designed to be a slow-starting Snowball card but she is actually kind of terrible because it takes too long for her to get the ball rolling. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5805,7 +6119,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_12.png"
+          "image": "cards/2.0/MonsterP1_12.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "In this version she was severely buffed, with the snowball now also gaining power just from hits. \nplus she can hit \"opponents\" instead of just \"opponent monsters\"\n\nonce she gets going she will only gain more and more, since she hits two people with The Wired, so she gains 2 from it by default, but then when she starts killing people she can get 6 ATK Power per turn, quite a startling ability. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -5829,7 +6150,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_25.png"
+          "image": "cards/1.0 BETA/deck_25.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5845,7 +6173,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_14.png"
+          "image": "cards/2.0/MonsterP1_14.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5869,7 +6204,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_26.png"
+          "image": "cards/1.0 BETA/deck_26.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5885,7 +6227,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_15.png"
+          "image": "cards/2.0/MonsterP1_15.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5910,7 +6259,14 @@
           "base_attack": 6,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_27.png"
+          "image": "cards/1.0 BETA/deck_27.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5927,7 +6283,14 @@
           "base_attack": 6,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_16.png"
+          "image": "cards/2.0/MonsterP1_16.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5951,7 +6314,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_28.png"
+          "image": "cards/1.0 BETA/deck_28.png",
+          "nationalities": [
+            "SWEDISH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -5967,7 +6337,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_18.png"
+          "image": "cards/2.0/MonsterP1_18.png",
+          "nationalities": [
+            "SWEDISH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -5991,7 +6368,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_29.png"
+          "image": "cards/1.0 BETA/deck_29.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6007,7 +6391,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_21.png"
+          "image": "cards/2.0/MonsterP1_21.png",
+          "nationalities": [
+            "EXTRA TERRESTRIAL"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -6047,7 +6438,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_30.png"
+          "image": "cards/1.0 BETA/chloride.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6063,7 +6461,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_25.png"
+          "image": "cards/2.0/MonsterP1_25.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -6087,7 +6492,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_31.png"
+          "image": "cards/1.0 BETA/deck_31.png",
+          "nationalities": [
+            "CHINESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6103,7 +6515,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_27.png"
+          "image": "cards/2.0/MonsterP1_27.png",
+          "nationalities": [
+            "CHINESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -6119,7 +6538,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_35.png"
+          "image": "cards/2.2/MonsterP1_35.png",
+          "nationalities": [
+            "CHINESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -6144,7 +6570,15 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_32.png"
+          "image": "cards/1.0 BETA/deck_32.png",
+          "nationalities": [
+            "JAPANESE",
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6160,7 +6594,15 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_28.png"
+          "image": "cards/2.0/MonsterP1_28.png",
+          "nationalities": [
+            "JAPANESE",
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -6178,7 +6620,7 @@
             "Gambler"
           ],
           "creator": "NICKO",
-          "original_series": "Sonic The Hedgehog",
+          "original_series": "Sonic the Hedgehog",
           "hp": 20,
           "mbh": 1,
           "base_attack": 4,
@@ -6217,7 +6659,7 @@
       "versions": [
         {
           "version": "1.0 BETA",
-          "name": "COLUMBO",
+          "name": "Lt. Columbo",
           "type": "MONSTER",
           "archetypes": [
             "Evidence"
@@ -6229,7 +6671,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_34.png"
+          "image": "cards/1.0 BETA/deck_34.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Evidence Points were originally intended to be a mechanic exclusive to Columbo, but they ended up being so powerful they ended up becoming their own archetype of Monsters to manipulate them. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6245,7 +6694,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_31.png"
+          "image": "cards/2.0/MonsterP1_31.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Columbo is the only Monster to ever defeat Milk Bud, which considering he is the scale on which HP is measured that is a pretty huge deal - Nicko.",
+          "default_rotation": 0
         }
       ]
     },
@@ -6269,7 +6725,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_35.png"
+          "image": "cards/1.0 BETA/deck_35.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6285,7 +6748,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_32.png"
+          "image": "cards/2.0/MonsterP1_32.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -6309,7 +6779,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/deck_36.png"
+          "image": "cards/1.0 BETA/deck_36.png",
+          "nationalities": [
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -6325,7 +6802,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_33.png"
+          "image": "cards/2.0/MonsterP1_33.png",
+          "nationalities": [
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -6341,7 +6825,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_42.png"
+          "image": "cards/2.2/MonsterP1_42.png",
+          "nationalities": [
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -6985,7 +7476,7 @@
           "base_attack": null,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/gamblingdeck_26.png"
+          "image": "cards/1.0 BETA/gamblingdeck_25.png"
         }
       ]
     },
@@ -7963,7 +8454,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Sonic The Hedgehog",
+          "original_series": "Sonic the Hedgehog",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -7982,13 +8473,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "",
+          "original_series": "Sonic the Hedgehog",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/2.3/Spacecolonyark.png"
+          "image": "cards/2.3/Spacecolonyark.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -8555,13 +9051,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "",
+          "original_series": "Parafin's Twisted mind",
           "hp": null,
           "mbh": null,
           "base_attack": null,
-          "stage_length": 4,
+          "stage_length": 999,
           "notes": "",
-          "image": "cards/2.3/BALAN.png"
+          "image": "cards/2.3/BALAN.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -8981,7 +9482,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Penn and Teller's: Smoke and Mirrors",
+          "original_series": "Penn & Teller's Smoke and Mirrors",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -10716,13 +11217,18 @@
             "Support"
           ],
           "creator": "NICKO",
-          "original_series": "Diners, Drive-ins and Dives",
+          "original_series": "Diners, Drive-Ins and Dives",
           "hp": 45,
           "mbh": 2,
           "base_attack": 16,
           "stage_length": null,
           "notes": "FLAVOR, FLAVORTOWN",
-          "image": "cards/1.3/LEGENDARY_02.png"
+          "image": "cards/1.3/LEGENDARY_02.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -10733,13 +11239,18 @@
             "Support"
           ],
           "creator": "NICKO",
-          "original_series": "Diners, Drive-ins and Dives",
+          "original_series": "Diners, Drive-Ins and Dives",
           "hp": 45,
           "mbh": 2,
           "base_attack": 16,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/LEGENDARY_02.png"
+          "image": "cards/2.0/LEGENDARY_02.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -10803,7 +11314,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.3/MonsterP1_01.png"
+          "image": "cards/1.3/MonsterP1_01.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -10819,7 +11337,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_01.png"
+          "image": "cards/2.0/MonsterP1_01.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -10883,7 +11408,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.3/MonsterP1_03.png"
+          "image": "cards/1.3/MonsterP1_03.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "1.8.1",
@@ -10899,7 +11431,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP3_04.png"
+          "image": "cards/1.8.1/MonsterP3_04.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -10915,7 +11454,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_06.png"
+          "image": "cards/2.0/MonsterP1_06.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -10979,7 +11525,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.3/MonsterP1_12.png"
+          "image": "cards/1.3/MonsterP1_12.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -10995,7 +11548,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_17.png"
+          "image": "cards/2.0/MonsterP1_17.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -11007,7 +11567,7 @@
       "versions": [
         {
           "version": "1.3",
-          "name": "CLUSSY",
+          "name": "Clussy",
           "type": "MONSTER",
           "archetypes": [
             "Snowball"
@@ -11019,7 +11579,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.3/MonsterP1_19.png"
+          "image": "cards/1.3/MonsterP1_19.png",
+          "nationalities": [
+            "CANADIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -11035,7 +11602,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_30.png"
+          "image": "cards/2.0/MonsterP1_30.png",
+          "nationalities": [
+            "CANADIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -11059,7 +11633,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.3/MonsterP1_23.png"
+          "image": "cards/1.3/MonsterP1_23.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -11075,7 +11656,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_35.png"
+          "image": "cards/2.0/MonsterP1_35.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -11099,7 +11687,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.3/MonsterP1_33.png"
+          "image": "cards/1.3/MonsterP1_33.png",
+          "nationalities": [
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -11115,7 +11710,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_45.png"
+          "image": "cards/2.0/MonsterP1_45.png",
+          "nationalities": [
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -11131,7 +11733,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_56.png"
+          "image": "cards/2.2/MonsterP1_56.png",
+          "nationalities": [
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -11364,7 +11973,7 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_51.png"
+          "image": "cards/1.8.1/MonsterP1_50.png"
         },
         {
           "version": "2.0",
@@ -11589,7 +12198,8 @@
           "name": "Ishikawa Goemon XIII",
           "type": "MONSTER",
           "archetypes": [
-            "Charge"
+            "Charge",
+            "Splash"
           ],
           "creator": "RUBEN",
           "original_series": "LUPIN III",
@@ -11598,7 +12208,12 @@
           "base_attack": 35,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_15.png"
+          "image": "cards/2.0/MonsterP2_15.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -12565,7 +13180,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.4/MonstersP1_02.png"
+          "image": "cards/1.4/MonstersP1_02.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -12581,7 +13203,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_02.png"
+          "image": "cards/2.0/MonsterP1_02.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -12606,7 +13235,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.4/MonstersP1_03.png"
+          "image": "cards/1.4/MonstersP1_03.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -12623,7 +13259,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_03.png"
+          "image": "cards/2.0/MonsterP1_03.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -12640,7 +13283,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_03.png"
+          "image": "cards/2.2/MonsterP1_03.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -12664,7 +13314,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.4/MonstersP1_16.png"
+          "image": "cards/1.4/MonstersP1_16.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -12680,7 +13337,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_19.png"
+          "image": "cards/2.0/MonsterP1_19.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -12777,7 +13441,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.4/MonstersP1_66.png"
+          "image": "cards/1.4/MonstersP1_66.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -12794,7 +13465,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_23.png"
+          "image": "cards/2.0/MonsterP2_23.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -13355,7 +14033,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_07.png"
+          "image": "cards/1.8.1/MonsterP1_07.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -13371,7 +14056,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_34.png"
+          "image": "cards/2.0/MonsterP1_34.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -13476,7 +14168,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_21.png"
+          "image": "cards/1.8.1/MonsterP1_21.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Her real name is \"Pepper\", although I've never actually used her name officially. \nsince she heals does that make her \"Dr. Pepper\"? \nI mean probably not since she didn't go to college for it, but she could be \"Dr. Pepper\" in the same way Dr. Phil is Dr. Phil I guess. \n\nShe shares her background with Terry Bogard, and they both have moves called \"Are you okay?\" - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -13493,7 +14192,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_48.png"
+          "image": "cards/2.0/MonsterP1_48.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Her real name is \"Pepper\", although I've never actually used her name officially. \nsince she heals does that make her \"Dr. Pepper\"? \nI mean probably not since she didn't go to college for it, but she could be \"Dr. Pepper\" in the same way Dr. Phil is Dr. Phil I guess. \n\nShe shares her background with Terry Bogard, and they both have moves called \"Are you okay?\" - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -13557,7 +14263,16 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_27.png"
+          "image": "cards/1.8.1/MonsterP1_27.png",
+          "nationalities": [
+            "JAPANESE",
+            "AMERICAN",
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Franziska in the Japanese version of Ace Attorney is a Japanese woman who lives and works in America. \n\nbut in the American version she is a American woman who lives and works in Germany... - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -13573,7 +14288,16 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_55.png"
+          "image": "cards/2.0/MonsterP1_55.png",
+          "nationalities": [
+            "JAPANESE",
+            "AMERICAN",
+            "GERMAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Franziska in the Japanese version of Ace Attorney is a Japanese woman who lives and works in America. \n\nbut in the American version she is a American woman who lives and works in Germany... \n\nanyway, interesting buff here is that she gained the ability to put Evidence on \"units\" instead of just \"Monsters\" - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -13613,7 +14337,7 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_42.png"
+          "image": "cards/1.8.1/MonsterP1_41.png"
         },
         {
           "version": "2.0",
@@ -14061,7 +14785,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP3_06.png"
+          "image": "cards/1.8.1/MonsterP3_06.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -14077,7 +14808,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_08.png"
+          "image": "cards/2.0/MonsterP1_08.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -14101,7 +14839,14 @@
           "base_attack": 8,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP3_18.png"
+          "image": "cards/1.8.1/MonsterP3_18.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -14118,7 +14863,14 @@
           "base_attack": 8,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_22.png"
+          "image": "cards/2.0/MonsterP1_22.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -14142,7 +14894,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP3_19.png"
+          "image": "cards/1.8.1/MonsterP3_19.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -14158,7 +14917,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_24.png"
+          "image": "cards/2.0/MonsterP1_24.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "Interesting anti-synergy in this card, see Doorknob does 3 damage to her when she uses it, but her weakness is Doorknob so it actually does 6 damage. \n\nbut her intended teammate: Alessa has the ability \"Silent Hill\" which makes all weaknesses x3 MORE potent, so she actually does 18 damage to herself. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -14419,8 +15185,8 @@
     {
       "id": "beach",
       "name": "A Beach",
-      "debut": "1.8.1",
-      "latest_version": "1.8.1",
+      "debut": "2.3",
+      "latest_version": "2.3",
       "versions": [
         {
           "version": "1.8.1",
@@ -14435,6 +15201,20 @@
           "stage_length": 4,
           "notes": "",
           "image": "cards/1.8.1/StagesP1_26.png"
+        },
+        {
+          "version": "2.3",
+          "name": "A Beach",
+          "type": "STAGE",
+          "archetypes": [],
+          "creator": "NICKO",
+          "original_series": "",
+          "hp": null,
+          "mbh": null,
+          "base_attack": null,
+          "stage_length": 4,
+          "notes": "",
+          "image": "cards/2.3/brasilianskies.png"
         }
       ]
     },
@@ -14558,13 +15338,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "",
+          "original_series": "Sonic the Hedgehog",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/1.8.1/StagesP1_41.png"
+          "image": "cards/1.8.1/StagesP1_41.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.3",
@@ -14578,7 +15363,12 @@
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/2.3/Emeraldcoast.png"
+          "image": "cards/2.3/Emeraldcoast.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -15960,7 +16750,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_10.png"
+          "image": "cards/2.0/MonsterP1_10.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -16015,7 +16812,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_23.png"
+          "image": "cards/2.0/MonsterP1_23.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -16031,7 +16835,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_30.png"
+          "image": "cards/2.2/MonsterP1_30.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -16055,7 +16866,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_26.png"
+          "image": "cards/2.0/MonsterP1_26.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -16071,7 +16889,14 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_34.png"
+          "image": "cards/2.2/MonsterP1_34.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -16093,7 +16918,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.3/FLUOGIRL.png"
+          "image": "cards/1.8.3/FLUOGIRL.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "This particular version of Fluoride Girl never actually made it into a release of the game.\nVersion 1.8.3 was being worked on alongside experimentation for a new Monster template, which eventually snowballed into FLUONKO 2.0 leaving this particular version to never see gameplay. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -16107,7 +16939,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP1_53.png"
+          "image": "cards/2.0/MonsterP1_53.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "The 2.0 Revamp of Fluoride Girl, the concept of her charging her own attacks from being damaged was planned for a while before this. \n\nThe balancing on this is quite jacked up though, with only 2 ATK Power per 5 HP lost, her absolute maximum  ATK Power is only 8, compared to Fluoozy who can get 16 ATK Power from a single charge. - Nicko",
+          "default_rotation": 0
         },
         {
           "version": "2.1",
@@ -16121,7 +16960,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.1/MonsterP1_58.png"
+          "image": "cards/2.1/MonsterP1_58.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "In this version FluOverflow's gain was buffed from 2 ATK Power to 4. \n\nbut the real buff is in the wording, instead of \"HP Lost\" it is \"Damage received\" this means she can still get the bonus even if the attack is defended against and doesn't actually lower her HP. \n\nplus it implies that the buff does not go away if she gets healed.\nmaking her maximum power theoretically infinite.\nalthough without any support her maximum is now 16 ATK Power, the same as Fluoozy. - Nicko\n",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -16135,7 +16981,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_65.png"
+          "image": "cards/2.2/MonsterP1_65.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "In this final buff the FluOverflow gain was raised from 4 to 5, finally solidifying her as stronger than Fluoozy. \n\nher maximum with no outside influence is now 20 ATK Power, making her quite scary. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -17390,8 +18243,8 @@
     {
       "id": "radhighway",
       "name": "RADICAL HIGHWAY",
-      "debut": "2.0",
-      "latest_version": "2.0",
+      "debut": "2.3",
+      "latest_version": "2.3",
       "versions": [
         {
           "version": "2.0",
@@ -17406,6 +18259,25 @@
           "stage_length": 4,
           "notes": "",
           "image": "cards/2.0/StageP2_35.png"
+        },
+        {
+          "version": "2.3",
+          "name": "RADICAL HIGHWAY",
+          "type": "STAGE",
+          "archetypes": [],
+          "creator": "NICKO",
+          "original_series": "Sonic the Hedgehog",
+          "hp": null,
+          "mbh": null,
+          "base_attack": null,
+          "stage_length": 4,
+          "notes": "",
+          "image": "cards/2.3/RadicalHighway.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -18137,7 +19009,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.1/MonsterP1_12.png"
+          "image": "cards/2.1/MonsterP1_12.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -18185,7 +19064,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.1/MonsterP1_21.png"
+          "image": "cards/2.1/MonsterP1_21.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -18210,7 +19096,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.1/MonsterP1_39.png"
+          "image": "cards/2.1/MonsterP1_39.png",
+          "nationalities": [
+            "ENGLISH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -19651,7 +20544,14 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_18.png"
+          "image": "cards/2.2/MonsterP1_18.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -19701,7 +20601,14 @@
           "base_attack": 999,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_26.png"
+          "image": "cards/2.2/MonsterP1_26.png",
+          "nationalities": [
+            "BRAZILIAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -19725,7 +20632,12 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_31.png"
+          "image": "cards/2.2/MonsterP1_31.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "This card was a prize for the 2026 FLUONKO MARCH MADNESS tournament, in which Parafin won. \n\nthe special team ability is a reference to how in two of his 3 matches in that Tournament he drew Iida Chloe Montebarm to great effect. \none of which lead to the all-time single turn ATK Power record of 96 ATK Power. - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -19749,7 +20661,14 @@
           "base_attack": 6,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_41.png"
+          "image": "cards/2.2/MonsterP1_41.png",
+          "nationalities": [
+            "AMERICAN"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -19773,7 +20692,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP1_54.png"
+          "image": "cards/2.2/MonsterP1_54.png",
+          "nationalities": [
+            "ENGLISH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20129,13 +21055,18 @@
             "Support"
           ],
           "creator": "PARAFIN",
-          "original_series": "",
+          "original_series": "Rhythm 'n' Face",
           "hp": 20,
           "mbh": 1,
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP3_54.png"
+          "image": "cards/2.2/MonsterP3_54.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20326,7 +21257,12 @@
           "base_attack": null,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/THE IMMORTAL.png"
+          "image": "cards/2.2/THE IMMORTAL.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "This is a reference to the time that Weirdo Dingo swapped Fluoride Girl's weakness and resistance, causing her to be completely immune to death. \n\nthat said, she is now Fluoozy, so is this illustration a picture of Fluoride Girl or Fluoozy? - Nicko",
+          "default_rotation": 0
         }
       ]
     },
@@ -20816,13 +21752,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "",
+          "original_series": "Persona",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/2.3/Magatsu Inaba.png"
+          "image": "cards/2.3/Magatsu Inaba.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20847,7 +21788,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP1_13.png"
+          "image": "cards/2.3/MonsterP1_13.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20872,7 +21820,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP1_23.png"
+          "image": "cards/2.3/MonsterP1_23.png",
+          "nationalities": [
+            "FRENCH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20896,7 +21851,14 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP1_27.png"
+          "image": "cards/2.3/MonsterP1_27.png",
+          "nationalities": [
+            "ENGLISH"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20914,13 +21876,20 @@
             "Evidence"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 4",
+          "original_series": "Persona",
           "hp": 25,
           "mbh": 1,
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP1_49.png"
+          "image": "cards/2.3/MonsterP1_49.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -20946,7 +21915,14 @@
           "base_attack": 10,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP1_54.png"
+          "image": "cards/2.3/MonsterP1_54.png",
+          "nationalities": [
+            "SOVIET"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21062,13 +22038,20 @@
             "Gambler"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 4",
+          "original_series": "Persona",
           "hp": 15,
           "mbh": 0,
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP3_20.png"
+          "image": "cards/2.3/MonsterP3_20.png",
+          "nationalities": [
+            "JAPANESE"
+          ],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21087,13 +22070,18 @@
             "Evidence"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 4",
+          "original_series": "Persona",
           "hp": 18,
           "mbh": 1,
           "base_attack": 999,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP3_22.png"
+          "image": "cards/2.3/MonsterP3_22.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21111,13 +22099,18 @@
             "Support"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 4",
+          "original_series": "Persona",
           "hp": 15,
           "mbh": 0,
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP3_24.png"
+          "image": "cards/2.3/MonsterP3_24.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21159,13 +22152,18 @@
             "Support"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 2: Innocent Sin",
+          "original_series": "Persona",
           "hp": 18,
           "mbh": 1,
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP3_37.png"
+          "image": "cards/2.3/MonsterP3_37.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21207,13 +22205,18 @@
             "Goon"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 5: The Phantom X",
+          "original_series": "Persona",
           "hp": 15,
           "mbh": 0,
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP4_07.png"
+          "image": "cards/2.3/MonsterP4_07.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21256,13 +22259,18 @@
             "Gambler"
           ],
           "creator": "NICKO",
-          "original_series": "Persona 4",
+          "original_series": "Persona",
           "hp": 20,
           "mbh": 1,
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.3/MonsterP4_37.png"
+          "image": "cards/2.3/MonsterP4_37.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -21410,13 +22418,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Persona 4",
+          "original_series": "Persona",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/2.3/THEFOG.png"
+          "image": "cards/2.3/THEFOG.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
