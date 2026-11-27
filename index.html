@@ -822,17 +822,23 @@
                 padding: 12px;
                 gap: 12px;
             }
-            #modalArtBox {
-                max-width: 240px;
-                margin: 0 auto;
-                width: 100%;
-            }
+          
             #modalTable td {
                 padding: 7px 9px;
                 font-size: 0.95rem;
             }
         }
         
+		.modal-art-box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
+			text-align: center;
+			font-family: var(--font-display);
+			font-size: 1.15rem;
+			font-weight: 700;
+		}
             .card-thumb img,
         #modalArtBox img,
         #zoomImg {
@@ -896,35 +902,57 @@
                 #2ed573 62%,
                 #1e90ff 82%,
                 #b84dff 100%
-            ) !important;
-            background-size: 100% 100% !important;
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-            color: transparent !important;
-            -webkit-text-fill-color: transparent !important;
-            text-shadow: none !important;
+            ) ;
+            background-size: 100% 100% ;
+            -webkit-background-clip: text ;
+            background-clip: text ;
+            color: transparent ;
+            -webkit-text-fill-color: transparent ;
+            text-shadow: none ;
             filter: drop-shadow(2px 2px 0 #000);
         }
-      
+      .local-edit-banner {
+    background: #6e1414;
+    border: 2px solid #b83232;
+    border-bottom-color: #3a0808;
+    border-right-color: #3a0808;
+    color: #ffe360;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    margin-top: 6px;
+    align-items: center;
+    justify-content: space-between;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.reload-orig-btn {
+    background: #3d0a0a;
+    color: #ffe360;
+    border: 1px solid #d9534f;
+    padding: 3px 9px;
+    font-weight: 800;
+    font-size: 11px;
+    cursor: pointer;
+    text-shadow: 2px 2px 0 #000;
+}
 
     </style>
 </head>
 
 <body>
 
-
     <aside class="left-rail bevel-out">
         <div class="logo-area">
             <img src="logo.png" alt="FLUODEX" class="site-logo" />
         </div>
         <div class="ver-header">VER. SELECT</div>
-        <div class="version-list" id="versionList"></div>
+        <div class="version-list" id="versionList">&nbsp;</div>
     </aside>
 
-
-    <section class="center-area">
+    <main class="center-area">
         <div class="count-row">Showing <strong id="visCount">0</strong> of <strong id="totCount">0</strong> cards</div>
-
 
         <nav class="folder-tabs-row" id="typeTabs">
             <div class="folder-tab-wrap"><button class="folder-tab active" data-type="ALL">ALL</button></div>
@@ -935,9 +963,8 @@
             <div class="folder-tab-wrap"><button class="folder-tab" data-type="GAMBLING RED">GAMBLING RED</button></div>
             <div class="folder-tab-wrap"><button class="folder-tab" data-type="HAVOC">HAVOC</button></div>
             <div class="folder-tab-wrap"><button class="folder-tab" data-type="EXTRA">EXTRA</button></div>
-			<div class="folder-tab-wrap"><button class="folder-tab" data-type="DISCONTINUED">DISCONTINUED</button></div>
+            <div class="folder-tab-wrap"><button class="folder-tab" data-type="DISCONTINUED">DISCONTINUED</button></div>
         </nav>
-
 
         <div class="folder-body">
             <div class="search-sort-bar">
@@ -957,17 +984,20 @@
                 </div>
             </div>
 
+            <div id="localEditBanner" class="local-edit-banner" style="display:none;">
+                <span>&#9888; VIEWING LOCAL EDITS — click "Reload Original" to return to the current site. Unsaved changes will be lost. &#9888;</span>
+                <button type="button" class="reload-orig-btn" onclick="document.getElementById('edClearDraft')?.click()">&#9888; RELOAD ORIGINAL &#9888;</button>
+            </div>
+
             <div class="grid-scroll">
-                <div class="card-grid" id="cardGrid"></div>
+                <div class="card-grid" id="cardGrid">&nbsp;</div>
             </div>
         </div>
-    </section>
-
+    </main>
 
     <aside class="right-rail bevel-out">
         <div class="filters-header">FILTERS</div>
         <div class="filters-scroll">
-
 
             <div class="filter-box bevel-in" id="mbhBlock">
                 <div class="filter-title">MBH</div>
@@ -989,8 +1019,6 @@
                 <div class="slider-row"><span>Min</span><input type="range" id="stageMin" min="0" max="2" value="0" /></div>
                 <div class="slider-row"><span>Max</span><input type="range" id="stageMax" min="0" max="2" value="2" /></div>
             </div>
-
-
 
             <div class="filter-box bevel-in">
                 <div class="filter-title">DEBUT</div>
@@ -1024,25 +1052,25 @@
         </div>
     </aside>
 
-
     <div class="modal-backdrop" id="modalBackdrop">
         <div class="modal-window bevel-out">
             <div class="win95-titlebar">
                 <strong id="modalTitle">Card Name</strong>
                 <button class="win95-close bevel-out" id="modalClose">X</button>
             </div>
-            <div class="wiki-tabbar" id="wikiTabbar"></div>
+            <div class="wiki-tabbar" id="wikiTabbar">&nbsp;</div>
             <div class="modal-content">
-                <div id="modalArtBox" class="bevel-in" style="display:flex; align-items:center; justify-content:center; padding:12px; text-align:center; font-family:var(--font-display); font-size:1.15rem; font-weight:700;"></div>
+                <div id="modalArtBox" class="bevel-in modal-art-box">card art</div>
                 <table class="info-table" id="modalTable"></table>
             </div>
         </div>
     </div>
 
-       <div class="zoom-overlay" id="zoomOverlay">
+    <div class="zoom-overlay" id="zoomOverlay">
         <img id="zoomImg" src="" alt="Full Size Card" draggable="false" />
         <div class="zoom-hint">Scroll to zoom · Drag to pan · Click background or ESC to close</div>
     </div>
+
 
     <script>
         (function () {
@@ -1299,6 +1327,21 @@
             const btnExportJson = makeBtn("edExportJson", "EXPORT cards.json", true);
             const btnExportCsv = makeBtn("edExportCsv", "EXPORT cards.csv", true);
             const btnClearDraft = makeBtn("edClearDraft", "RELOAD ORIGINAL", false);
+
+            function updateLocalEditBanner() {
+			const banner = document.getElementById("localEditBanner");
+			if (!banner) return;
+			const hasDraft = Object.keys(localStorage).some(function (k) {
+				return k.toLowerCase().includes("fluodex") || k.toLowerCase().includes("draft") || k.toLowerCase().includes("cards");
+			});
+			banner.style.display = hasDraft ? "flex" : "none";
+		}
+		updateLocalEditBanner();
+		const _origSetItem = localStorage.setItem.bind(localStorage);
+		localStorage.setItem = function (k, v) { _origSetItem(k, v); updateLocalEditBanner(); };
+		const _origRemoveItem = localStorage.removeItem.bind(localStorage);
+		localStorage.removeItem = function (k) { _origRemoveItem(k); updateLocalEditBanner(); };
+
 
             editorBar.append(badge, btnExportJson, btnExportCsv, btnClearDraft);
             folderBody.insertBefore(editorBar, folderBody.firstChild);
@@ -1743,6 +1786,7 @@ else delete currentModalCard.discontinued_in;
             btnClearDraft.onclick = function () {
                 if (!confirm("Discard unsaved browser edits and reload directly from cards.json?")) return;
                 localStorage.removeItem(STORAGE_KEY);
+				updateLocalEditBanner();
                 location.reload();
             };
 
