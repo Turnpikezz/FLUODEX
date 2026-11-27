@@ -817,6 +817,7 @@
                 overflow-y: auto;
             }
             .modal-content {
+			    align-items: stretch;
                 grid-template-columns: 1fr;
                 padding: 12px;
                 gap: 12px;
@@ -835,19 +836,21 @@
         .card-thumb img,
         #modalArtBox img,
         #zoomImg {
-            border-radius: 6.5% / 4.8%;
+            border-radius: 8.75% / 3.75%;
             overflow: hidden;
         }
                #modalArtBox {
             align-self: start;
         }
         #modalTable {
-            display: block;
+            height: 100%;
+			display: block;
             max-height: 588px;
             overflow-y: auto;
             overflow-x: hidden;
         }
         #modalTable tbody {
+		    height: 100%;
             display: table;
             width: 100%;
         }
@@ -2115,15 +2118,22 @@ function render() {
         }
 
 
-                    if (state.search) {
-                        const hay = (
-                            (ver.name || "") + " " +
-                            (ver.notes || "") + " " +
-                            (ver.archetypes || []).join(" ") + " " +
-                            (ver.tags || "")
-                        ).toLowerCase();
-                        if (!hay.includes(state.search)) return false;
-                    }
+					if (state.search) {
+						const q = state.search.trim().toLowerCase();
+						if (q === "description" || q === "has:description") {
+							const desc = String(ver.description || card.description || "").trim();
+							if (!desc || desc === "-" || desc === "—") return false;
+						} else {
+							const hay = (
+								(ver.name || "") + " " +
+								(ver.notes || "") + " " +
+								(ver.archetypes || []).join(" ") + " " +
+								(ver.tags || "")
+							).toLowerCase();
+							if (!hay.includes(q)) return false;
+						}
+					}
+
 
                     if (state.debut !== "ALL" && card.debut !== state.debut) return false;
                     if (state.archetype !== "ALL" && !(ver.archetypes || []).includes(state.archetype)) return false;
