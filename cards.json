@@ -135,7 +135,7 @@
           "nationalities": [],
           "weakness": "",
           "resistance": "",
-          "description": "BILL OF GREED is the physical manifestation of the titular sin. He is to be violently purged with extreme prejudice, lest he spread like a cancerous growth.",
+          "description": "",
           "default_rotation": 0
         }
       ]
@@ -209,7 +209,10 @@
           "stage_length": null,
           "notes": "",
           "image": "cards/2.1/JOHAN2.png",
-          "nationalities": [],
+          "nationalities": [
+            "AMERICAN",
+            "FRENCH"
+          ],
           "weakness": "",
           "resistance": "",
           "description": "",
@@ -358,12 +361,10 @@
           "stage_length": null,
           "notes": "PRESIDENT, REMOVED",
           "image": "cards/1.0 BETA/VIPdeck_02.png",
-          "nationalities": [
-            "Puerto Rican"
-          ],
+          "nationalities": [],
           "weakness": "",
           "resistance": "",
-          "description": "Dosemanmax fucking sucks.",
+          "description": "",
           "default_rotation": 0
         }
       ],
@@ -977,7 +978,7 @@
           "type": "VIP",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Yu-Gi-Oh!",
+          "original_series": "YU-GI-OH!",
           "hp": 55,
           "mbh": 3,
           "base_attack": null,
@@ -3532,7 +3533,7 @@
             "Goon"
           ],
           "creator": "NICKO",
-          "original_series": "Sonic the Hedgehog",
+          "original_series": "Sonic The Hedgehog",
           "hp": 2,
           "mbh": 0,
           "base_attack": 1,
@@ -3721,7 +3722,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "Gluttony, Consume",
-          "image": "cards/1.0 BETA/deck1_50.png"
+          "image": "cards/1.0 BETA/deck1_50.png",
+          "nationalities": [
+            "American"
+          ],
+          "weakness": "Greens",
+          "resistance": "Bad Air",
+          "description": "Of all the cards I could have come up with, this was my first idea. The original details were pretty vague anyway.",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -3737,7 +3745,14 @@
           "base_attack": 2,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP2_55.png"
+          "image": "cards/2.0/MonsterP2_55.png",
+          "nationalities": [
+            "American"
+          ],
+          "weakness": "Greens",
+          "resistance": "Bad Air",
+          "description": "Of course this bastard didn't need any revision.",
+          "default_rotation": 0
         }
       ]
     },
@@ -4038,7 +4053,7 @@
         {
           "version": "1.0 BETA",
           "name": "Polish Homeless Guy",
-          "type": "MONSTER",
+          "type": "MONSTER, DISCONTINUED",
           "archetypes": [
             "Goon"
           ],
@@ -4068,7 +4083,7 @@
         {
           "version": "1.0 BETA",
           "name": "Polish Silver Guy",
-          "type": "MONSTER",
+          "type": "MONSTER, DISCONTINUED",
           "archetypes": [
             "Goon"
           ],
@@ -4089,7 +4104,7 @@
         {
           "version": "1.8.1",
           "name": "Polish Silver Guy",
-          "type": "MONSTER",
+          "type": "MONSTER, DISCONTINUED",
           "archetypes": [
             "Goon"
           ],
@@ -4228,7 +4243,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "Alter Ego",
-          "image": "cards/1.0 BETA/deck1_61.png"
+          "image": "cards/1.0 BETA/deck1_61.png",
+          "nationalities": [
+            "Japanese"
+          ],
+          "weakness": "Psychic, Mental",
+          "resistance": "Guns",
+          "description": "Originally inspired by the Lain seen in the PS1 story, but basically just 'other' Lain in general.",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -4244,7 +4266,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.0/MonsterP3_02.png"
+          "image": "cards/2.0/MonsterP3_02.png",
+          "nationalities": [
+            "Japanese"
+          ],
+          "weakness": "Psychic, Mental",
+          "resistance": "Guns",
+          "description": "She now has 1 whole extra HP. And a shiny new Special Team Ability. And rewording.",
+          "default_rotation": 0
         },
         {
           "version": "2.2",
@@ -4260,7 +4289,14 @@
           "base_attack": 0,
           "stage_length": null,
           "notes": "",
-          "image": "cards/2.2/MonsterP3_32.png"
+          "image": "cards/2.2/MonsterP3_32.png",
+          "nationalities": [
+            "Japanese"
+          ],
+          "weakness": "Psychic, Mental",
+          "resistance": "Guns",
+          "description": "",
+          "default_rotation": 0
         }
       ]
     },
@@ -4590,7 +4626,7 @@
             "Charge"
           ],
           "creator": "NICKO",
-          "original_series": "Sonic the Hedgehog",
+          "original_series": "Sonic The Hedgehog",
           "hp": 10,
           "mbh": 0,
           "base_attack": 4,
@@ -5348,7 +5384,7 @@
             "Snowball"
           ],
           "creator": "NICKO",
-          "original_series": "Rhythm 'n' Face",
+          "original_series": "Rhyhm 'n' Face",
           "hp": 9,
           "mbh": 0,
           "base_attack": 1,
@@ -6011,7 +6047,7 @@
           "base_attack": 1,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/chloride.png"
+          "image": "cards/1.0 BETA/deck_30.png"
         },
         {
           "version": "2.0",
@@ -6142,7 +6178,7 @@
             "Gambler"
           ],
           "creator": "NICKO",
-          "original_series": "Sonic the Hedgehog",
+          "original_series": "Sonic The Hedgehog",
           "hp": 20,
           "mbh": 1,
           "base_attack": 4,
@@ -6949,7 +6985,7 @@
           "base_attack": null,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.0 BETA/gamblingdeck_25.png"
+          "image": "cards/1.0 BETA/gamblingdeck_26.png"
         }
       ]
     },
@@ -7580,7 +7616,7 @@
           "nationalities": [],
           "weakness": "",
           "resistance": "",
-          "description": "Fun fact: Unlike in Pokémon TCG, the game does not end when your deck is empty. Rather, your discard pile BECOMES your new deck.",
+          "description": "Fun fact: Unlike in Pokémon TCG, the game does not end when your deck is empty. Rather, your discard pile BECOMES your new deck. - Parafin \n\nIntriguingly, despite it saying \"all of your cards\" this card has only ever discarded Monsters. - Nicko",
           "default_rotation": 0
         }
       ]
@@ -7927,7 +7963,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Sonic the Hedgehog",
+          "original_series": "Sonic The Hedgehog",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -8040,7 +8076,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Fallout 3",
+          "original_series": "FALLOUT 3",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -8945,7 +8981,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Penn & Teller's Smoke and Mirrors",
+          "original_series": "Penn and Teller's: Smoke and Mirrors",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -9790,7 +9826,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Beyblade",
+          "original_series": "Pokémon",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -10403,7 +10439,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Buzz Junior",
+          "original_series": "BUZZ JUNIOR",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -10452,7 +10488,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Diners, Drive-ins and Dives",
+          "original_series": "Diners, Drive-Ins and Dives",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -11328,7 +11364,7 @@
           "base_attack": 4,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_50.png"
+          "image": "cards/1.8.1/MonsterP1_51.png"
         },
         {
           "version": "2.0",
@@ -11943,7 +11979,7 @@
           "type": "EXTRA",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "The Simpsons",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -11992,7 +12028,7 @@
           "type": "EXTRA",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Pokémon",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -13062,7 +13098,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Yu-Gi-Oh!",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -13577,7 +13613,7 @@
           "base_attack": 3,
           "stage_length": null,
           "notes": "",
-          "image": "cards/1.8.1/MonsterP1_41.png"
+          "image": "cards/1.8.1/MonsterP1_42.png"
         },
         {
           "version": "2.0",
@@ -14672,7 +14708,12 @@
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/1.8.1/StagesP1_58.png"
+          "image": "cards/1.8.1/StagesP1_58.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "I genuinely don't remember making this. Spooky.",
+          "default_rotation": 0
         },
         {
           "version": "2.3",
@@ -14686,7 +14727,12 @@
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/2.3/Liminal_Mall.png"
+          "image": "cards/2.3/Liminal_Mall.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "Even when I was porting this to the new template I just figured someone else made it.",
+          "default_rotation": 0
         }
       ]
     },
@@ -14918,13 +14964,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "K",
-          "original_series": "Higurashi no Naku Koro ni",
+          "original_series": "Higurashi When They Cry (Higurashi no Naku Koro ni)",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
-          "notes": "",
-          "image": "cards/1.8.1/StagesP2_14.png"
+          "notes": "SP, Suicide Points",
+          "image": "cards/1.8.1/StagesP2_14.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "The first edition of a card I probably should have thought out properly first as I was not aware both Main Characters weren't plentiful and that 2 SP = Death.\nAlso very ambitious.",
+          "default_rotation": 0
         },
         {
           "version": "2.0",
@@ -14932,13 +14983,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "K",
-          "original_series": "",
+          "original_series": "Higurashi When They Cry (Higurashi no Naku Koro ni)",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
           "notes": "",
-          "image": "cards/2.0/StageP1_67.png"
+          "image": "cards/2.0/StageP1_67.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "Slightly reworded revision, but still convoluted word salad that doesn't make sense.",
+          "default_rotation": 0
         },
         {
           "version": "2.3",
@@ -14946,7 +15002,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "K",
-          "original_series": "Higurashi no Naku Koro ni",
+          "original_series": "Higurashi When They Cry (Higurashi no Naku Koro ni)",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -14956,7 +15012,7 @@
           "nationalities": [],
           "weakness": "",
           "resistance": "",
-          "description": "",
+          "description": "An overhaul that still really doesn't work very well at all and still very wordy.",
           "default_rotation": 0
         }
       ]
@@ -15425,7 +15481,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "The Legend of Zelda",
+          "original_series": "Super Smash Bros. Melee",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -15520,7 +15576,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Kirby",
+          "original_series": "Super Smash Bros. Melee",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -15657,7 +15713,7 @@
           "type": "GAMBLING RED",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Five Nights at Freddy's",
+          "original_series": "Grand Theft Auto",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -15750,7 +15806,7 @@
           "type": "GAMBLING RED",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Toy Story",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -15927,8 +15983,15 @@
           "mbh": 0,
           "base_attack": 2,
           "stage_length": null,
-          "notes": "",
-          "image": "cards/2.0/MonsterP1_20.png"
+          "notes": "Stalking, YouTube",
+          "image": "cards/2.0/MonsterP1_20.png",
+          "nationalities": [
+            "American"
+          ],
+          "weakness": "Physical Conflict",
+          "resistance": "FEAR",
+          "description": "I really need a better image for this.",
+          "default_rotation": 0
         }
       ]
     },
@@ -16724,7 +16787,7 @@
           "type": "EXTRA",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Spongebob Squarepants",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -16944,13 +17007,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "K",
-          "original_series": "",
+          "original_series": "Dead Rising",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 8,
           "notes": "",
-          "image": "cards/2.0/StageP1_31.png"
+          "image": "cards/2.0/StageP1_31.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "This stage was made because I wanted another one than just Hinamizawa.",
+          "default_rotation": 0
         },
         {
           "version": "2.3",
@@ -16962,9 +17030,14 @@
           "hp": null,
           "mbh": null,
           "base_attack": null,
-          "stage_length": 4,
+          "stage_length": 8,
           "notes": "",
-          "image": "cards/2.3/williamette_parkview_mall.png"
+          "image": "cards/2.3/williamette_parkview_mall.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "Some slight rewording but mostly the same.",
+          "default_rotation": 0
         }
       ]
     },
@@ -17932,7 +18005,7 @@
           "type": "GAMBLING RED",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Theme Park",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -17959,7 +18032,7 @@
           "type": "GAMBLING RED",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Spongebob Squarepants",
+          "original_series": "MONSTER",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -18986,7 +19059,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Spongebob Squarepants",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -19013,7 +19086,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "MAX",
-          "original_series": "Ghetto Smosh",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -19040,7 +19113,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "MAX",
-          "original_series": "METAL GEAR SOLID",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -19177,7 +19250,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "LSD Dream Emulator",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -19204,7 +19277,7 @@
           "type": "GAMBLING BLUE",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Pokémon",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -19310,7 +19383,7 @@
     {
       "id": "conspiracy",
       "name": "CONSPIRACY THEORY",
-      "debut": "2.1",
+      "debut": "2.2",
       "latest_version": "2.2",
       "versions": [
         {
@@ -20198,7 +20271,7 @@
           "type": "HAVOC",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Spongebob Squarepants",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -20467,7 +20540,7 @@
           "type": "HAVOC",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "The Boondocks",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -20494,7 +20567,7 @@
           "type": "HAVOC",
           "archetypes": [],
           "creator": "NICKO",
-          "original_series": "Um Jammer Lammy",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -21425,7 +21498,7 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Mugen",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -21496,7 +21569,7 @@
           "type": "HAVOC",
           "archetypes": [],
           "creator": "PARAFIN",
-          "original_series": "Pokémon",
+          "original_series": "",
           "hp": null,
           "mbh": null,
           "base_attack": null,
@@ -21547,13 +21620,18 @@
           "type": "STAGE",
           "archetypes": [],
           "creator": "K",
-          "original_series": "",
+          "original_series": "Thing-Thing",
           "hp": null,
           "mbh": null,
           "base_attack": null,
           "stage_length": 4,
-          "notes": "",
-          "image": "cards/2.3/stage-thingthing.png"
+          "notes": "Instakill, Weasel, Flash, Newgrounds",
+          "image": "cards/2.3/stage-thingthing.png",
+          "nationalities": [],
+          "weakness": "",
+          "resistance": "",
+          "description": "This card only took so long to be added cause I couldn't settle on what song to pick for it. The idea was simple enough though.",
+          "default_rotation": 0
         }
       ]
     },
